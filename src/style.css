@@ -38,7 +38,7 @@ body {
   margin: 0;
   display: flex;
   place-items: start;
-  min-width: 320px;
+  min-width: 350px;
   min-height: 100vh;
 }
 
@@ -75,7 +75,6 @@ button:focus-visible {
 #app {
   height: 100%;
   width: 100%;
-  max-width: 1920px;
   margin: 0 auto;
   text-align: center;
   overflow-y: auto;
