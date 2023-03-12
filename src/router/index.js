@@ -8,6 +8,24 @@ const routes = [
     component: () => import("@/views/Home/index.vue"),
   },
   {
+    // 核心业务
+    path: "/Business",
+    name: "Business",
+    component: () => import("@/views/Business/index.vue"),
+  },
+  {
+    // 企业文化
+    path: "/Culture",
+    name: "Culture",
+    component: () => import("@/views/Culture/index.vue"),
+  },
+  {
+    // 关于我们
+    path: "/AboutUs",
+    name: "AboutUs",
+    component: () => import("@/views/AboutUs/index.vue"),
+  },
+  {
     // 404页面
     path: "/not-found",
     name: "notFound",
