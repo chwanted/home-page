@@ -3,12 +3,12 @@
     :slidesPerView="1"
     :initialSlide="0"
     :loop="true"
-    className="banner-swiper"
+    class="banner-swiper"
   >
     <SwiperSlide v-for="(item, index) in bannerList" :key="index">
-      <div className="banner-swiper-item">
-        <img className="banner-swiper-img" :src="item.img" />
-        <div className="banner-swiper-title">{{ item.title }}</div>
+      <div class="banner-swiper-item">
+        <img class="banner-swiper-img" :src="item.img" />
+        <div class="banner-swiper-title">{{ item.title }}</div>
       </div>
     </SwiperSlide>
   </Swiper>
@@ -34,6 +34,19 @@
         </div>
       </li>
     </ul>
+
+    <section class="solution">
+      <h1>各产业解决方案</h1>
+      <div class="solution-container">
+        <div
+          v-bind:class="['solution-container-item', `solution-item-${index}`]"
+          v-for="(item, index) in solutionList"
+          :key="index"
+        >
+          <h4>{{ item.title }}</h4>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -52,6 +65,14 @@ const bannerList = [
   { img: banner2, title: "团结奋斗 追求卓越" },
   { img: banner1, title: "敢于创新 超越自我" },
   { img: banner3, title: "求真务实 顽强拼搏" },
+];
+const solutionList = [
+  { title: "房建施工" },
+  { title: "市政路桥" },
+  { title: "勘察设计" },
+  { title: "机电安装" },
+  { title: "装饰装修" },
+  { title: "建材物流" },
 ];
 const state = reactive({
   navIndex: 0,
@@ -164,6 +185,57 @@ const formatNumber = (num) => {
       &-item {
         flex-basis: 50%;
         row-gap: 20px;
+      }
+    }
+  }
+
+  .solution {
+    &-container {
+      padding: 0 14rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .solution-container-item {
+        position: relative;
+        border-radius: 10px;
+        height: 16.8421rem;
+        width: 23.3158rem;
+        margin: 0 1.5263rem 1.5263rem 0;
+
+        & > h4 {
+          position: absolute;
+          top: 10.1579rem;
+          left: 3.1579rem;
+          font-size: 1.5789rem;
+          font-weight: normal;
+          color: #ffffff;
+          line-height: 2.2105rem;
+        }
+      }
+
+      .solution-item-0 {
+        background: url("@/assets/images/solution0.jpg") no-repeat center/cover;
+      }
+
+      .solution-item-1 {
+        background: url("@/assets/images/solution1.png") no-repeat center/cover;
+      }
+
+      .solution-item-2 {
+        background: url("@/assets/images/solution2.jpg") no-repeat center/cover;
+      }
+
+      .solution-item-3 {
+        background: url("@/assets/images/solution3.png") no-repeat center/cover;
+      }
+
+      .solution-item-4 {
+        background: url("@/assets/images/solution4.png") no-repeat center/cover;
+      }
+
+      .solution-item-5 {
+        background: url("@/assets/images/solution5.png") no-repeat center/cover;
       }
     }
   }
