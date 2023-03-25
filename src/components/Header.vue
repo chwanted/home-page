@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <h4 class="header-title">袁仁山团队</h4>
+    <h4 class="header-title" @click="navClick(0, '/')">袁仁山团队</h4>
     <ul class="header-menu">
       <li
         v-for="(item, index) in navList"
@@ -44,36 +44,42 @@ const navClick = (index, path) => {
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 130px;
+  height: 60px;
   z-index: 9999;
-  // background: rgba(0, 0, 0, 0.2);
-  // color: #fff;
-  // background: #fff;
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(25px);
   color: #333333;
   box-shadow: 0 14px 20px -12px rgba(0, 0, 0, 0.2);
 
-  &-title {
-    margin-left: 200px;
-    font-size: 54px;
-    white-space: nowrap;
-    @media screen and (max-width: 768px) {
-      margin-left: 100px;
-      font-size: 50px;
+  @media screen and (max-width: 768px) {
+    height: 190px;
+    .header-title {
+      margin-left: 130px;
+      font-size: 100px;
     }
+  }
+
+  &-title {
+    margin-left: 100px;
+    font-size: 24px;
+    white-space: nowrap;
+    cursor: pointer;
   }
 
   &-menu {
     display: flex;
-    font-size: 38px;
-    margin-right: 20px;
+    font-size: 16px;
+    margin-right: 10px;
 
     & > li {
-      margin-right: 100px;
+      margin-right: 40px;
       list-style: none;
       white-space: nowrap;
       cursor: pointer;
+
+      &:hover {
+        color: #c00;
+      }
 
       @media screen and (max-width: 768px) {
         margin-right: 80px;

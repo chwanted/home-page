@@ -22,16 +22,12 @@ import aboutus from "@/assets/images/aboutus.jpg";
 
 <style lang="scss" scoped>
 .about-us {
-  height: 1400px;
+  height: 680px;
   width: 100%;
   object-fit: cover;
 
   @media screen and (max-width: 768px) {
-    height: 800px;
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 996px) {
-    height: 1000px;
+    height: 1200px;
   }
 }
 
@@ -53,7 +49,7 @@ main {
       text-indent: 2em;
       text-align: left;
       word-break: break-all;
-      font-size: 40px;
+      font-size: 16px;
     }
   }
 }

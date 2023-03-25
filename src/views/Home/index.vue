@@ -77,10 +77,10 @@ const solutionList = [
 const state = reactive({
   navIndex: 0,
   numberList: [
-    { num: "328", label: "服务客户", unit: "家", more: false },
-    { num: "512", label: "交付项目", unit: "个", more: false },
-    { num: "43200", label: "建工面积", unit: "㎡", more: true },
-    { num: "3000", label: "团队成立", unit: "天", more: true },
+    { num: 328, label: "服务客户", unit: "家", more: false },
+    { num: 512, label: "交付项目", unit: "个", more: false },
+    { num: 43200, label: "建工面积", unit: "㎡", more: true },
+    { num: 3000, label: "团队成立", unit: "天", more: true },
   ],
 });
 
@@ -106,42 +106,31 @@ const formatNumber = (num) => {
   }
 
   &-img {
-    height: 1400px;
-    width: 100%;
+    height: 680px;
+    width: 100vw;
     object-fit: cover;
-
-    @media screen and (max-width: 768px) {
-      height: 800px;
-    }
-
-    @media screen and (min-width: 768px) and (max-width: 996px) {
-      height: 1000px;
-    }
   }
 
   &-title {
     position: absolute;
-    top: 300px;
-    right: 150px;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
     font-family: "LvJianDeXingKai";
-    font-size: 164px;
-    color: red;
-    text-shadow: 2px 2px #777;
-    -webkit-text-stroke: 0.7px white;
+    font-size: 110px;
+    color: #ffffff;
+    text-shadow: 1px 2px rgba(0, 0, 0, 0.6);
+    // -webkit-text-stroke: 0.7px white;
     white-space: nowrap;
     cursor: default;
+  }
 
-    @media screen and (max-width: 768px) {
-      // display: none;
-      width: 100vw;
-      top: 60%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 74px;
+  @media screen and (max-width: 768px) {
+    .banner-swiper-img {
+      height: 1200px;
     }
-
-    @media screen and (min-width: 768px) and (max-width: 1039px) {
-      font-size: 114px;
+    .banner-swiper-title {
+      font-size: 180px;
     }
   }
 }
@@ -151,26 +140,26 @@ const formatNumber = (num) => {
   .statistics {
     display: flex;
     justify-content: space-around;
-    padding: 3% 0;
+    padding: 1.5% 0;
     margin: 0;
     background: #f5f5f5;
 
     &-item {
       list-style: none;
-      font-size: 36px;
+      font-size: 20px;
       color: #3d3d3d;
 
       &-box {
         &-num {
           & > span {
-            text-shadow: #d1bfbf 3px 3px 1px;
-            font-size: 54px;
+            text-shadow: #d1bfbf 1px 1px 1px;
+            font-size: 32px;
             font-weight: 500;
             color: #cc0000;
 
             &:last-of-type {
-              margin-left: 10px;
-              font-size: 36px;
+              margin-left: 5px;
+              font-size: 16px;
               color: #3d3d3d;
               text-shadow: none;
             }
@@ -179,38 +168,55 @@ const formatNumber = (num) => {
       }
     }
 
-    @media screen and (max-width: 520px) {
+    @media screen and (max-width: 768px) {
       flex-wrap: wrap;
 
-      &-item {
+      .statistics-item {
         flex-basis: 50%;
-        row-gap: 20px;
+        column-gap: 60px;
       }
     }
   }
 
   .solution {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     &-container {
-      padding: 0 14rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, 373px);
+      grid-column-gap: 50px;
+      grid-row-gap: 40px;
 
       .solution-container-item {
         position: relative;
         border-radius: 10px;
-        height: 16.8421rem;
-        width: 23.3158rem;
-        margin: 0 1.5263rem 1.5263rem 0;
+        height: 269px;
+        width: 373px;
+
+        &:hover {
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.4);
+          }
+        }
 
         & > h4 {
           position: absolute;
-          top: 10.1579rem;
-          left: 3.1579rem;
-          font-size: 1.5789rem;
+          top: 160px;
+          left: 40px;
+          font-size: 26px;
           font-weight: normal;
           color: #ffffff;
-          line-height: 2.2105rem;
+          line-height: 26px;
         }
       }
 

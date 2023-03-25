@@ -24,17 +24,13 @@ import culture from "@/assets/images/Culture.jpg";
   position: relative;
 
   &-banner {
-    height: 1400px;
+    height: 680px;
     width: 100%;
     filter: blur(0.1vw);
     background-attachment: fixed;
     object-fit: cover;
     @media screen and (max-width: 768px) {
-      height: 800px;
-    }
-
-    @media screen and (min-width: 768px) and (max-width: 996px) {
-      height: 1000px;
+      height: 1200px;
     }
   }
 
@@ -47,7 +43,7 @@ import culture from "@/assets/images/Culture.jpg";
     color: #fff;
     text-indent: 2em;
     word-break: break-all;
-    font-size: 44px;
+    font-size: 18px;
     text-align: left;
 
     @media screen and (max-width: 768px) {
