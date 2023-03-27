@@ -55,19 +55,28 @@
       <strong>资讯新闻</strong>
       <Swiper
         :modules="newsModules"
-        :slidesPerView="1"
+        slidesPerView="3"
         :initialSlide="0"
-        :loop="true"
+        navigation
         class="news-swiper"
       >
         <SwiperSlide v-for="(item, index) in newsList" :key="index">
           <div class="news-swiper-item">
-            <img class="news-swiper-img" :src="item.img" />
-            <div class="news-swiper-title">{{ item.title }}</div>
-            <div class="learn-more">了解更多</div>
+            <div class="news-swiper-img"><img :src="item.img" /></div>
+            <strong class="news-swiper-title">{{ item.title }}</strong>
+            <div class="learn-more"><span>了解更多</span><span>→</span></div>
           </div>
         </SwiperSlide>
       </Swiper>
+    </section>
+
+    <section class="culture">
+      <strong>企业文化</strong>
+      <div class="culture-container">
+        <p>
+          企业文化始终围绕“以人为本、追求卓越、诚信守信、关爱社会”的核心价值观展开，以“亲和力、执行力、创新力”作为公司的核心文化要素，贯穿于公司的各个方面。
+        </p>
+      </div>
     </section>
   </main>
 </template>
@@ -125,15 +134,15 @@ const formatNumber = (num) => {
   }
 
   .swiper-item0 {
-    background: url("@/assets/images/banner2.jpg") no-repeat center/cover;
+    background: url("@/assets/images/banner/banner2.jpg") no-repeat center/cover;
   }
 
   .swiper-item1 {
-    background: url("@/assets/images/banner1.jpg") no-repeat center/cover;
+    background: url("@/assets/images/banner/banner1.jpg") no-repeat center/cover;
   }
 
   .swiper-item2 {
-    background: url("@/assets/images/banner3.jpg") no-repeat center/cover;
+    background: url("@/assets/images/banner/banner3.jpg") no-repeat center/cover;
   }
 
   &-img {
@@ -247,43 +256,125 @@ const formatNumber = (num) => {
 
         & > h4 {
           position: absolute;
-          top: 160px;
+          bottom: 10px;
           left: 40px;
-          font-size: 26px;
+          font-size: 24px;
           font-weight: normal;
           color: #ffffff;
-          line-height: 26px;
+          line-height: 24px;
         }
       }
 
       .solution-item-0 {
-        background: url("@/assets/images/solution0.jpg") no-repeat center/cover;
+        background: url("@/assets/images/solution/solution0.jpg") no-repeat
+          center/cover;
       }
 
       .solution-item-1 {
-        background: url("@/assets/images/solution1.png") no-repeat center/cover;
+        background: url("@/assets/images/solution/solution1.png") no-repeat
+          center/cover;
       }
 
       .solution-item-2 {
-        background: url("@/assets/images/solution2.jpg") no-repeat center/cover;
+        background: url("@/assets/images/solution/solution2.jpg") no-repeat
+          center/cover;
       }
 
       .solution-item-3 {
-        background: url("@/assets/images/solution3.png") no-repeat center/cover;
+        background: url("@/assets/images/solution/solution3.png") no-repeat
+          center/cover;
       }
 
       .solution-item-4 {
-        background: url("@/assets/images/solution4.png") no-repeat center/cover;
+        background: url("@/assets/images/solution/solution4.png") no-repeat
+          center/cover;
       }
 
       .solution-item-5 {
-        background: url("@/assets/images/solution5.png") no-repeat center/cover;
+        background: url("@/assets/images/solution/solution5.png") no-repeat
+          center/cover;
       }
     }
   }
 
   .news {
     &-swiper {
+      margin: 3.12vw 0 0 110px;
+
+      &-item {
+        width: 480px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      &-img {
+        width: inherit;
+        height: 270px;
+        overflow: hidden;
+        cursor: pointer;
+
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          &:hover {
+            transform: scale(1.1);
+            transition: all 0.5s ease-in-out;
+          }
+        }
+      }
+
+      &-title {
+        height: 72px;
+        width: 100%;
+        padding-bottom: 1.66vw;
+        margin: 1.45vw 0px 1.87vw;
+        font-size: 24px;
+        line-height: 36px;
+        text-align: left;
+        border-bottom: 1px solid rgba(152, 25, 25, 0.2);
+        cursor: pointer;
+      }
+
+      .learn-more {
+        padding: 0 20px;
+        line-height: 48px;
+        height: 48px;
+        width: 120px;
+        color: #981919;
+        border: 1px solid rgba(152, 25, 25);
+        font-size: 14px;
+        display: inline-block;
+        border-radius: 2.2em;
+        cursor: pointer;
+
+        & > span {
+          display: inline-block;
+
+          &:last-of-type {
+            display: none;
+          }
+        }
+
+        &:hover {
+          display: flex;
+          justify-content: space-between;
+          transition: all 0.5s ease-in-out;
+
+          & > span {
+            &:last-of-type {
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .culture {
+    &-container {
+      margin-top: 3.12vw;
     }
   }
 
@@ -293,14 +384,15 @@ const formatNumber = (num) => {
     &:nth-of-type(even) {
       background: #f5f5f5;
     }
-    strong {
+    
+    & > strong {
       position: relative;
       font-size: 38px;
       line-height: 50px;
 
       &:after {
         content: "";
-        background: #213547;
+        background: rgba(33, 53, 71, 0.8);
         height: 6px;
         width: 24px;
         position: absolute;
@@ -313,9 +405,31 @@ const formatNumber = (num) => {
 }
 </style>
 <style lang="scss">
-.swiper-pagination-bullet-active {
-  background: #fff !important;
-  width: 20px !important;
-  border-radius: 20px !important;
+.banner-swiper {
+  .swiper-pagination-bullet-active {
+    background: #fff !important;
+    width: 20px !important;
+    border-radius: 20px !important;
+  }
+}
+
+.news-swiper {
+  overflow: visible;
+  .swiper-button-prev {
+    left: -70px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #981919;
+  }
+
+  .swiper-button-next {
+    right: 40px;
+  }
+
+  .swiper-button-disabled {
+    display: none;
+  }
 }
 </style>

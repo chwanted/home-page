@@ -26,7 +26,7 @@ import culture from "@/assets/images/Culture.jpg";
   &-banner {
     height: 680px;
     width: 100%;
-    filter: blur(0.1vw);
+    filter: blur(0.01vw);
     background-attachment: fixed;
     object-fit: cover;
     @media screen and (max-width: 768px) {
@@ -43,7 +43,7 @@ import culture from "@/assets/images/Culture.jpg";
     color: #fff;
     text-indent: 2em;
     word-break: break-all;
-    font-size: 18px;
+    font-size: 20px;
     text-align: left;
 
     @media screen and (max-width: 768px) {
