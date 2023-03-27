@@ -1,15 +1,18 @@
 <template>
   <Swiper
+    :modules="bannerModules"
     :slidesPerView="1"
     :initialSlide="0"
     :loop="true"
+    :pagination="{ clickable: true }"
     class="banner-swiper"
   >
     <SwiperSlide v-for="(item, index) in bannerList" :key="index">
       <div class="banner-swiper-item">
+        <div v-bind:class="['swiper-item', `swiper-item${index}`]" />
         <img class="banner-swiper-img" :src="item.img" />
-        <div class="banner-swiper-title">{{ item.title }}</div>
       </div>
+      <div class="banner-swiper-title">{{ item.title }}</div>
     </SwiperSlide>
   </Swiper>
 
@@ -36,7 +39,7 @@
     </ul>
 
     <section class="solution">
-      <h1>各产业解决方案</h1>
+      <strong>各产业解决方案</strong>
       <div class="solution-container">
         <div
           v-bind:class="['solution-container-item', `solution-item-${index}`]"
@@ -47,33 +50,39 @@
         </div>
       </div>
     </section>
+
+    <section class="news">
+      <strong>资讯新闻</strong>
+      <Swiper
+        :modules="newsModules"
+        :slidesPerView="1"
+        :initialSlide="0"
+        :loop="true"
+        class="news-swiper"
+      >
+        <SwiperSlide v-for="(item, index) in newsList" :key="index">
+          <div class="news-swiper-item">
+            <img class="news-swiper-img" :src="item.img" />
+            <div class="news-swiper-title">{{ item.title }}</div>
+            <div class="learn-more">了解更多</div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </section>
   </main>
 </template>
 
 <script setup>
 import { reactive } from "vue";
-import { Autoplay, Pagination } from "swiper";
+import { Navigation, Autoplay, Pagination } from "swiper";
+import { solutionList, bannerList, newsList } from "./data";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { CountTo } from "vue3-count-to";
-import banner1 from "@/assets/images/banner1.jpg";
-import banner2 from "@/assets/images/banner2.jpg";
-import banner3 from "@/assets/images/banner3.jpg";
-import "swiper/css/autoplay";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import "swiper/css";
-const bannerList = [
-  { img: banner2, title: "团结奋斗 追求卓越" },
-  { img: banner1, title: "敢于创新 超越自我" },
-  { img: banner3, title: "求真务实 顽强拼搏" },
-];
-const solutionList = [
-  { title: "房建施工" },
-  { title: "市政路桥" },
-  { title: "勘察设计" },
-  { title: "机电安装" },
-  { title: "装饰装修" },
-  { title: "建材物流" },
-];
+const bannerModules = [Autoplay, Pagination];
+const newsModules = [Autoplay, Navigation];
 const state = reactive({
   navIndex: 0,
   numberList: [
@@ -98,17 +107,43 @@ const formatNumber = (num) => {
 
   .swiper-wrapper {
     .swiper-slide {
+      position: relative;
+      overflow: hidden;
     }
   }
 
   &-item {
     position: relative;
+    overflow: hidden;
+  }
+
+  .swiper-item {
+    height: 680px;
+    width: 100vw;
+    transform: scale(1.05);
+    filter: blur(0.2vw);
+  }
+
+  .swiper-item0 {
+    background: url("@/assets/images/banner2.jpg") no-repeat center/cover;
+  }
+
+  .swiper-item1 {
+    background: url("@/assets/images/banner1.jpg") no-repeat center/cover;
+  }
+
+  .swiper-item2 {
+    background: url("@/assets/images/banner3.jpg") no-repeat center/cover;
   }
 
   &-img {
-    height: 680px;
+    position: absolute;
+    top: 17%;
+    left: 0;
+    height: 500px;
     width: 100vw;
     object-fit: cover;
+    overflow: hidden;
   }
 
   &-title {
@@ -184,6 +219,7 @@ const formatNumber = (num) => {
     align-items: center;
 
     &-container {
+      margin-top: 3.12vw;
       display: grid;
       grid-template-columns: repeat(3, 373px);
       grid-column-gap: 50px;
@@ -245,5 +281,41 @@ const formatNumber = (num) => {
       }
     }
   }
+
+  .news {
+    &-swiper {
+    }
+  }
+
+  section {
+    padding: 4.98vw 0px 4.1vw;
+
+    &:nth-of-type(even) {
+      background: #f5f5f5;
+    }
+    strong {
+      position: relative;
+      font-size: 38px;
+      line-height: 50px;
+
+      &:after {
+        content: "";
+        background: #213547;
+        height: 6px;
+        width: 24px;
+        position: absolute;
+        left: 50%;
+        margin-left: -12px;
+        bottom: -1.56vw;
+      }
+    }
+  }
+}
+</style>
+<style lang="scss">
+.swiper-pagination-bullet-active {
+  background: #fff !important;
+  width: 20px !important;
+  border-radius: 20px !important;
 }
 </style>

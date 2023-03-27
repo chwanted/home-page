@@ -1,28 +1,83 @@
 <template>
-  <div class="GoTop" @click="GoTop()">
-    <span class="">sss</span>
+  <div class="GoTop">
+    <div class="GoTop-item" @click="contactUs()">
+      <span class="contact" /><span>技术支持</span>
+    </div>
+    <div class="GoTop-item" @click="GoTop()">
+      <span class="goTop" /><span>回到顶部</span>
+    </div>
   </div>
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 const GoTop = () => {
   var currentScroll =
     document.documentElement.scrollTop || document.body.scrollTop;
   if (currentScroll > 0) {
-    window.requestAnimationFrame(smoothscroll);
-    window.scrollTo(0, currentScroll - currentScroll / 10);
+    window.scrollTo(0, 0);
   }
+};
+
+const contactUs = () => {
+  router.push({ path: "/AboutUs" });
 };
 </script>
 
 <style lang="scss" scoped>
 .GoTop {
-  width: 50px;
-  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 0;
+  bottom: 1%;
+  transform: translateY(-50%);
   z-index: 999;
   cursor: pointer;
+
+  &-item {
+    width: fit-content;
+    padding: 10px;
+    border-radius: 25px 0 0 25px;
+    background: rgba(51, 51, 51, 0.63);
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 14px;
+
+    &:hover {
+      background: #cc0000;
+
+      & > span:last-of-type {
+        display: inline-block;
+        margin-left: 5px;
+      }
+    }
+ 
+    & > span {
+      &:first-of-type {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      &:last-of-type {
+        display: none;
+      }
+    }
+
+    .contact {
+      width: 20px;
+      height: 20px;
+      background: url("@/assets/images/contact.png") no-repeat center/contain;
+    }
+
+    .goTop {
+      width: 20px;
+      height: 20px;
+      background: url("@/assets/images/goTop.png") no-repeat center/contain;
+    }
+  }
 }
 </style>
