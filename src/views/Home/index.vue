@@ -70,13 +70,18 @@
       </Swiper>
     </section>
 
-    <section class="culture">
+    <!-- <section class="culture">
       <strong>企业文化</strong>
       <div class="culture-container">
         <p>
           企业文化始终围绕“以人为本、追求卓越、诚信守信、关爱社会”的核心价值观展开，以“亲和力、执行力、创新力”作为公司的核心文化要素，贯穿于公司的各个方面。
         </p>
       </div>
+    </section> -->
+
+    <section class="Partner">
+      <strong>合作伙伴</strong>
+      <div class="Partner-container"><Partner /></div>
     </section>
   </main>
 </template>
@@ -87,6 +92,7 @@ import { Navigation, Autoplay, Pagination } from "swiper";
 import { solutionList, bannerList, newsList } from "./data";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { CountTo } from "vue3-count-to";
+import Partner from "@/components/Partner.vue";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css";
@@ -378,13 +384,19 @@ const formatNumber = (num) => {
     }
   }
 
+  .Partner {
+    &-container {
+      margin-top: 3.12vw;
+    }
+  }
+
   section {
     padding: 4.98vw 0px 4.1vw;
 
     &:nth-of-type(even) {
       background: #f5f5f5;
     }
-    
+
     & > strong {
       position: relative;
       font-size: 38px;
@@ -392,7 +404,7 @@ const formatNumber = (num) => {
 
       &:after {
         content: "";
-        background: rgba(33, 53, 71, 0.8);
+        background: rgba(51, 51, 51, 0.6);
         height: 6px;
         width: 24px;
         position: absolute;
