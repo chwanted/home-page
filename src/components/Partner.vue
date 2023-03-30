@@ -10,7 +10,7 @@
         stopOnLastSlide: false,
         disableOnInteraction: true,
       }"
-      class="partner-swiper"
+      class="partner-swiper swiper-no-swiping"
     >
       <SwiperSlide v-for="(item, index) in partnerList" :key="index">
         <img :src="item" class="partner-img" />
@@ -27,7 +27,7 @@
         stopOnLastSlide: false,
         disableOnInteraction: true,
       }"
-      v-bind:class="['partner-swiper', 'swiper-second']"
+      class="partner-swiper swiper-no-swiping swiper-second"
     >
       <SwiperSlide v-for="(item, index) in partnerList" :key="index"
         ><img :src="item" class="partner-img" />
@@ -45,7 +45,7 @@
         stopOnLastSlide: false,
         disableOnInteraction: true,
       }"
-      class="partner-swiper"
+      class="partner-swiper swiper-no-swiping"
     >
       <SwiperSlide v-for="(item, index) in partnerList" :key="index"
         ><img :src="item" class="partner-img" />
@@ -59,6 +59,7 @@ import { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import partner1 from "@/assets/images/partner/partner1.png";
 import "swiper/css";
+import "swiper/css/bundle";
 
 const Modules = [Autoplay];
 const partnerList = [
@@ -111,10 +112,10 @@ const partnerList = [
   }
 
   .swiper-second {
-    padding-right: 4vw !important;
+    left: 90px;
   }
 
-  .partner-swiper {
+  :deep(.partner-swiper) {
     padding: 15px 0;
     .swiper-slide {
       width: 254.714px;
@@ -136,7 +137,7 @@ const partnerList = [
 </style>
 
 <style lang="scss">
-.swiper-container .swiper-wrapper {
+.swiper-wrapper {
   -webkit-transition-timing-function: linear !important; /*之前是ease-out*/
   -moz-transition-timing-function: linear !important;
   -ms-transition-timing-function: linear !important;

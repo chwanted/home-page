@@ -12,6 +12,12 @@
           </p>
         </div>
       </section>
+
+      <section class="Certification">
+        <strong>荣誉资质</strong>
+        <Certification />
+      </section>
+
       <section class="contact">
         <strong>联系我们</strong>
         <div class="contact-container">
@@ -36,13 +42,13 @@
           <div class="contact-map" />
         </div>
       </section>
-
-      <section class="end"></section>
     </main>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import Certification from "@/components/Certification.vue";
+</script>
 
 <style lang="scss" scoped>
 .aboutus {
@@ -88,6 +94,12 @@
           word-break: break-all;
           font-size: 16px;
         }
+      }
+    }
+
+    .Certification {
+      &-container {
+        margin-top: 3.12vw;
       }
     }
 

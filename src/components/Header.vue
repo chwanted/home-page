@@ -44,7 +44,7 @@ const navClick = (index, path) => {
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 60px;
+  height: 4.125vw;
   z-index: 9999;
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(25px);

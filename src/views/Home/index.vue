@@ -53,31 +53,8 @@
 
     <section class="news">
       <strong>资讯新闻</strong>
-      <Swiper
-        :modules="newsModules"
-        slidesPerView="3"
-        :initialSlide="0"
-        navigation
-        class="news-swiper"
-      >
-        <SwiperSlide v-for="(item, index) in newsList" :key="index">
-          <div class="news-swiper-item">
-            <div class="news-swiper-img"><img :src="item.img" /></div>
-            <strong class="news-swiper-title">{{ item.title }}</strong>
-            <div class="learn-more"><span>了解更多</span><span>→</span></div>
-          </div>
-        </SwiperSlide>
-      </Swiper>
+      <div class="news-container"><NewsList :newsList="newsList" /></div>
     </section>
-
-    <!-- <section class="culture">
-      <strong>企业文化</strong>
-      <div class="culture-container">
-        <p>
-          企业文化始终围绕“以人为本、追求卓越、诚信守信、关爱社会”的核心价值观展开，以“亲和力、执行力、创新力”作为公司的核心文化要素，贯穿于公司的各个方面。
-        </p>
-      </div>
-    </section> -->
 
     <section class="Partner">
       <strong>合作伙伴</strong>
@@ -88,16 +65,16 @@
 
 <script setup>
 import { reactive } from "vue";
-import { Navigation, Autoplay, Pagination } from "swiper";
-import { solutionList, bannerList, newsList } from "./data";
+import { Autoplay, Pagination } from "swiper";
+import { solutionList, bannerList, newsList } from "../../common/data";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { CountTo } from "vue3-count-to";
 import Partner from "@/components/Partner.vue";
+import NewsList from "@/components/NewsList.vue";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
 import "swiper/css";
+
 const bannerModules = [Autoplay, Pagination];
-const newsModules = [Autoplay, Navigation];
 const state = reactive({
   navIndex: 0,
   numberList: [
@@ -153,7 +130,7 @@ const formatNumber = (num) => {
 
   &-img {
     position: absolute;
-    top: 17%;
+    top: 19%;
     left: 0;
     height: 500px;
     width: 100vw;
@@ -245,6 +222,7 @@ const formatNumber = (num) => {
         border-radius: 10px;
         height: 269px;
         width: 373px;
+        cursor: pointer;
 
         &:hover {
           position: relative;
@@ -304,77 +282,9 @@ const formatNumber = (num) => {
   }
 
   .news {
-    &-swiper {
-      margin: 3.12vw 0 0 110px;
-
-      &-item {
-        width: 480px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      &-img {
-        width: inherit;
-        height: 270px;
-        overflow: hidden;
-        cursor: pointer;
-
-        & > img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          &:hover {
-            transform: scale(1.1);
-            transition: all 0.5s ease-in-out;
-          }
-        }
-      }
-
-      &-title {
-        height: 72px;
-        width: 100%;
-        padding-bottom: 1.66vw;
-        margin: 1.45vw 0px 1.87vw;
-        font-size: 24px;
-        line-height: 36px;
-        text-align: left;
-        border-bottom: 1px solid rgba(152, 25, 25, 0.2);
-        cursor: pointer;
-      }
-
-      .learn-more {
-        padding: 0 20px;
-        line-height: 48px;
-        height: 48px;
-        width: 120px;
-        color: #981919;
-        border: 1px solid rgba(152, 25, 25);
-        font-size: 14px;
-        display: inline-block;
-        border-radius: 2.2em;
-        cursor: pointer;
-
-        & > span {
-          display: inline-block;
-
-          &:last-of-type {
-            display: none;
-          }
-        }
-
-        &:hover {
-          display: flex;
-          justify-content: space-between;
-          transition: all 0.5s ease-in-out;
-
-          & > span {
-            &:last-of-type {
-              display: inline-block;
-            }
-          }
-        }
-      }
+    &-container {
+      margin-top: 3.12vw;
+      margin-left: 110px;
     }
   }
 
@@ -422,26 +332,6 @@ const formatNumber = (num) => {
     background: #fff !important;
     width: 20px !important;
     border-radius: 20px !important;
-  }
-}
-
-.news-swiper {
-  overflow: visible;
-  .swiper-button-prev {
-    left: -70px;
-  }
-
-  .swiper-button-prev,
-  .swiper-button-next {
-    color: #981919;
-  }
-
-  .swiper-button-next {
-    right: 40px;
-  }
-
-  .swiper-button-disabled {
-    display: none;
   }
 }
 </style>
