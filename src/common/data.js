@@ -5,6 +5,7 @@ import news1 from "@/assets/images/news/news1.png";
 import news2 from "@/assets/images/news/news2.png";
 import news3 from "@/assets/images/news/news3.png";
 import defaultImg from "@/assets/images/news/default.jpg";
+import defaultImg2 from "@/assets/images/news/default2.jpg";
 
 export const solutionList = [
   { title: "房建施工" },
@@ -104,7 +105,7 @@ export const newsList = [
   },
   {
     id: 3,
-    img: defaultImg,
+    img: defaultImg2,
     source: "国资委",
     date: "2023-01-18",
     title: "国资委召开中央建筑企业专项工作部署会",

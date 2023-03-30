@@ -36,14 +36,40 @@
               在我们的企业文化中，我们强调员工和客户的体验。我们鼓励员工不断学习和进步，为客户提供高品质的服务。我们相信，通过实践这些价值观，我们能够不断提升企业的声誉和价值，为客户和社会创造更多的价值。
             </p>
           </div>
-          <div class="Intro-container-right"></div>
+          <div class="Intro-container-right">
+            <Swiper
+              :modules="[Autoplay, Pagination]"
+              :slidesPerView="1"
+              :loop="true"
+              :pagination="{ clickable: true }"
+              :autoplay="{
+                delay: 3000,
+                stopOnLastSlide: false,
+                disableOnInteraction: true,
+              }"
+              class="team-swiper swiper-no-swiping"
+            >
+              <SwiperSlide v-for="(item, index) in teamList" :key="index"
+                ><img :src="item" class="team-img" />
+              </SwiperSlide>
+            </Swiper>
+          </div>
         </div>
       </section>
     </main>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { Autoplay, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import team1 from "@/assets/images/team/team1.jpg";
+import team2 from "@/assets/images/team/team2.jpg";
+import team3 from "@/assets/images/team/team3.jpg";
+import "swiper/css/bundle";
+import "swiper/css";
+const teamList = [team1, team2, team3];
+</script>
 
 <style lang="scss" scoped>
 .culture {
@@ -98,17 +124,19 @@
       overflow: hidden;
 
       &-container {
-        margin-top: 3.12vw;
+        margin: 1.12vw 0;
         display: flex;
+        align-items: center;
 
         &-left,
         &-right {
-          flex: 1;
+          width: calc((100% - 30px) / 2);
         }
 
         &-left {
+          margin-right: 30px;
           .Intro-title {
-            font-size: 18px;
+            font-size: 20px;
             text-align: start;
             font-weight: bold;
           }
@@ -120,8 +148,23 @@
             font-size: 16px;
           }
         }
+
+        &-right {
+          .team-swiper {
+            .team-img {
+              height: 397px;
+              object-fit: cover;
+            }
+          }
+        }
       }
     }
   }
+}
+</style>
+
+<style lang="scss" scoped>
+:deep(.swiper-pagination-bullet-active) {
+  background: #fff !important;
 }
 </style>

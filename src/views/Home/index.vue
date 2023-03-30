@@ -110,7 +110,7 @@ const formatNumber = (num) => {
   }
 
   .swiper-item {
-    height: 680px;
+    height: 814px;
     width: 100vw;
     transform: scale(1.05);
     filter: blur(0.2vw);
@@ -132,7 +132,7 @@ const formatNumber = (num) => {
     position: absolute;
     top: 19%;
     left: 0;
-    height: 500px;
+    height: 600px;
     width: 100vw;
     object-fit: cover;
     overflow: hidden;

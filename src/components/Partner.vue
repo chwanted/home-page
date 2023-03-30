@@ -35,7 +35,6 @@
     </Swiper>
 
     <Swiper
-      :options="swiperOption"
       :modules="Modules"
       :slidesPerView="7"
       :loop="true"
