@@ -142,9 +142,9 @@ const onSlideChange = (props) => {
 
     .banner-swiper {
       position: absolute;
-      top: 19%;
+      top: 17vh;
       left: 0;
-      height: 600px;
+      height: 63.55vh;
       width: 100vw;
       z-index: 2;
 
@@ -350,7 +350,7 @@ const onSlideChange = (props) => {
 .banner-swiper {
   overflow: visible;
   .swiper-pagination {
-    bottom: -40px;
+    bottom: -5vh;
   }
   .swiper-pagination-bullet-active {
     background: #fff !important;
