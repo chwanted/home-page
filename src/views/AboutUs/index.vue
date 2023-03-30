@@ -82,7 +82,6 @@ import Certification from "@/components/Certification.vue";
         }
       }
     }
-
     .Introduction {
       overflow: hidden;
       &-container {
