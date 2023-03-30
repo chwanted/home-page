@@ -4,7 +4,7 @@
 
 <script setup>
 import { useRoute, useRouter } from "vue-router";
-import { solutionList, bannerList, newsList } from "../../../common/data";
+import { newsList } from "../../../common/data";
 const route = useRoute();
 const router = useRouter();
 const { id } = route.query;
