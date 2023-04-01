@@ -2,14 +2,21 @@
   <main class="main-body">
     <div class="main-body-top">
       <div class="main-body-top-swiper">
-        <div v-bind:class="['swiper-bck', `swiper-bck${bannerIndex}`]"></div>
+        <div
+          v-bind:class="['swiper-bck', `swiper-bck${state.bannerIndex}`]"
+        ></div>
         <Swiper
           :modules="bannerModules"
           :slidesPerView="1"
-          :initialSlide="0"
+          :initialSlide="bannerIndex"
           :loop="true"
           :pagination="{ clickable: true }"
           @slideChange="onSlideChange"
+          :autoplay="{
+            delay: 3000,
+            stopOnLastSlide: false,
+            disableOnInteraction: true,
+          }"
           class="banner-swiper"
         >
           <SwiperSlide v-for="(item, index) in bannerList" :key="index">
@@ -88,7 +95,7 @@ const state = reactive({
   ],
 });
 const onSlideChange = (props) => {
-  console.log("props", props);
+  state.bannerIndex = props.realIndex
 };
 // const formatNumber = (num) => {
 //   // 格式化数据
