@@ -18,12 +18,4 @@ export default {
   address: '浦东新区崂山路300号大厦1号楼17层',
   /** 备案号 */
   keepOnRecordIcp: '喻ICP备18041627号',
-
-  /** 百度地图相关信息 */
-  BDMapInfo: {
-      longitude: 121.526896,
-      latitude: 31.24022,
-      title: '普联大厦',
-      address: '浦东新区崂山路300号普联大厦1号楼5楼703'
-  }
 }
