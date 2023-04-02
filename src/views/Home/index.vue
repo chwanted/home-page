@@ -8,7 +8,7 @@
         <Swiper
           :modules="bannerModules"
           :slidesPerView="1"
-          :initialSlide="bannerIndex"
+          :initialSlide="state.bannerIndex"
           :loop="true"
           :pagination="{ clickable: true }"
           @slideChange="onSlideChange"
