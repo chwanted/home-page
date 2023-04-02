@@ -14,7 +14,7 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 const GoTop = () => {
-  var currentScroll =
+  let currentScroll =
     document.documentElement.scrollTop || document.body.scrollTop;
   if (currentScroll > 0) {
     window.scrollTo(0, 0);

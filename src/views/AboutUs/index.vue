@@ -15,7 +15,7 @@
 
       <section class="Certification">
         <strong>荣誉资质</strong>
-        <Certification />
+        <Certification/>
       </section>
 
       <section class="contact">
@@ -23,24 +23,26 @@
         <div class="contact-container">
           <div class="contact-box">
             <div class="contact-item">
-              <div v-bind:class="['contact-location', 'contact-icon']" />
+              <div v-bind:class="['contact-location', 'contact-icon']"/>
               <div class="contact-title">联系地址</div>
               <div class="contact-value">重庆市江北区中华大道10号</div>
             </div>
             <div class="contact-item">
-              <div v-bind:class="['contact-tel', 'contact-icon']" />
+              <div v-bind:class="['contact-tel', 'contact-icon']"/>
               <div class="contact-title">联系电话</div>
               <div class="contact-value">18589322222</div>
             </div>
             <div class="contact-item">
-              <div v-bind:class="['contact-email', 'contact-icon']" />
+              <div v-bind:class="['contact-email', 'contact-icon']"/>
               <div class="contact-title">联系邮箱</div>
               <div class="contact-value">xixixixi@sina.com</div>
             </div>
           </div>
-
-          <div class="contact-map" />
         </div>
+        <!--          添加地图-->
+<!--        <div class="contact-map">-->
+          <Map/>
+<!--        </div>-->
       </section>
     </main>
   </div>
@@ -48,14 +50,13 @@
 
 <script setup>
 import Certification from "@/components/Certification.vue";
-</script>
+import Map from "@/components/Map.vue";</script>
 
 <style lang="scss" scoped>
 .aboutus {
   width: 100vw;
   height: 100vh;
-  background: url("@/assets/images/aboutus.jpg") #fff no-repeat top/cover;
-  background-attachment: fixed;
+  background: #fff url("@/assets/images/aboutus.jpg") no-repeat fixed;
 
   main {
     padding-top: 680px;
@@ -64,6 +65,7 @@ import Certification from "@/components/Certification.vue";
     section {
       background: #fff;
       padding: 4.1vw 300px 0;
+
       & > strong {
         background: #fff;
         position: relative;
@@ -82,10 +84,13 @@ import Certification from "@/components/Certification.vue";
         }
       }
     }
+
     .Introduction {
       overflow: hidden;
+
       &-container {
         margin-top: 3.12vw;
+
         p {
           color: #333333;
           text-indent: 2em;
@@ -146,8 +151,7 @@ import Certification from "@/components/Certification.vue";
             }
 
             .contact-location {
-              background: url("@/assets/images/location.png") no-repeat
-                center/cover;
+              background: url("@/assets/images/location.png") no-repeat center/cover;
             }
 
             .contact-tel {
@@ -155,15 +159,13 @@ import Certification from "@/components/Certification.vue";
             }
 
             .contact-email {
-              background: url("@/assets/images/email.png") no-repeat
-                center/cover;
+              background: url("@/assets/images/email.png") no-repeat center/cover;
             }
 
             &:hover {
               width: calc(33% - 60px);
               height: inherit;
-              background: url("@/assets/images/card-bck.png") no-repeat
-                center/cover;
+              background: url("@/assets/images/card-bck.png") no-repeat center/cover;
               transition: all 0.5s ease-in-out;
 
               .contact-icon {
@@ -177,17 +179,19 @@ import Certification from "@/components/Certification.vue";
             }
           }
         }
-
-        .contact-map {
-          position: absolute;
-          top: 280px;
-          left: 0;
-          width: 100%;
-          height: 700px;
-          z-index: 0;
-          background: url("@/assets/images/map.png") no-repeat center/cover;
-        }
+        //.contact-map {
+        //  //position: relative;
+        //  //bottom: 100px;
+        //  top: 280px;
+        //  left: 0;
+        //  width: 100%;
+        //  height: 700px;
+        //  z-index: 0;
+        //  //background: url("@/assets/images/map.png") no-repeat center/cover;
+        //
+        //}
       }
+
     }
   }
 }

@@ -1,12 +1,15 @@
 <template>
+
   <header class="header">
-    <h4 class="header-title" @click="navClick(0, '/')">袁仁山团队</h4>
+
+      <h4 class="header-title" @click="navClick(0, '/')">袁仁山团队</h4>
+
     <ul class="header-menu">
       <li
-        v-for="(item, index) in navList"
-        :key="index"
-        :class="index == state.navIndex ? 'menu-active' : ''"
-        @click="navClick(index, item.path)"
+          v-for="(item, index) in navList"
+          :key="index"
+          :class="index === state.navIndex ? 'menu-active' : ''"
+          @click="navClick(index, item.path)"
       >
         {{ item.name }}
       </li>
@@ -15,23 +18,23 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
-import { useRouter } from "vue-router";
+import {reactive} from "vue";
+import {useRouter} from "vue-router";
 
 const router = useRouter();
 const state = reactive({
   navIndex: 0,
 });
 const navList = [
-  { name: "首页", path: "/" },
-  { name: "核心业务", path: "/Business" },
-  { name: "企业文化", path: "/Culture" },
-  { name: "关于我们", path: "/AboutUs" },
+  {name: "首页", path: "/"},
+  {name: "核心业务", path: "/Business"},
+  {name: "企业文化", path: "/Culture"},
+  {name: "关于我们", path: "/AboutUs"},
 ];
 
 const navClick = (index, path) => {
   state.navIndex = index;
-  router.push({ path: path });
+  router.push({path: path});
 };
 </script>
 

@@ -1,17 +1,18 @@
 <template>
   <main class="main-body">
     <div class="main-body-top">
-      <div class="main-body-top-swiper">
+      <div class="main-body-top-swiper swiper-no-swiping">
         <div
           v-bind:class="['swiper-bck', `swiper-bck${state.bannerIndex}`]"
         ></div>
         <Swiper
           :modules="bannerModules"
           :slidesPerView="1"
-          :initialSlide="bannerIndex"
+          :initialSlide="state.bannerIndex"
           :loop="true"
           :pagination="{ clickable: true }"
           @slideChange="onSlideChange"
+          :speed="2000"
           :autoplay="{
             delay: 3000,
             stopOnLastSlide: false,

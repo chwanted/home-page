@@ -5,7 +5,7 @@ const routes = [
     // 首页
     path: "/",
     name: "home",
-    component: () => import("@/views/Home/index.vue"),
+    component :() => import("@/views/Home/index.vue")
   },
   {
     // 核心业务
