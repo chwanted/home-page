@@ -21,7 +21,7 @@ onMounted(() => {
     // 中心位置
     center: [29.35, 106.33],
     // 缩放等级
-    zoom: 4.2,
+    zoom: 5,
     // 版权控件
     attributionControl: false,
     // 缩放控件

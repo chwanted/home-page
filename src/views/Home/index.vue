@@ -116,6 +116,7 @@ const toPage = () => {
     display: flex;
     flex-direction: column;
     height: 102vh;
+    max-height: 1080px;
 
     &-swiper {
       position: relative;
@@ -131,6 +132,7 @@ const toPage = () => {
       z-index: 1;
       width: 100vw;
       height: 100vh;
+      max-height: 1080px;
       transform: scale(1.05);
       filter: blur(0.2vw);
     }
@@ -152,9 +154,10 @@ const toPage = () => {
 
     .banner-swiper {
       position: absolute;
-      top: 17vh;
+      top: 18.5%;
       left: 0;
       height: 63.55vh;
+      max-height: 705px;
       width: 100vw;
       z-index: 2;
 
@@ -254,19 +257,19 @@ const toPage = () => {
         width: 373px;
         cursor: pointer;
 
-        // &:hover {
-        //   position: relative;
-        //   &::before {
-        //     content: "";
-        //     position: absolute;
-        //     width: inherit;
-        //     height: inherit;
-        //     top: 0;
-        //     left: 0;
-        //     border-radius: 10px;
-        //     background: rgba(0, 0, 0, 0.4);
-        //   }
-        // }
+        &:hover {
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.4);
+          }
+        }
 
         & > h4 {
           position: absolute;
@@ -360,7 +363,7 @@ const toPage = () => {
 .banner-swiper {
   overflow: visible;
   .swiper-pagination {
-    bottom: -5vh;
+    bottom: -8%;
   }
   .swiper-pagination-bullet-active {
     background: #fff !important;

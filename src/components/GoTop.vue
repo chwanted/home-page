@@ -14,10 +14,21 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 const GoTop = () => {
-  var currentScroll =
-    document.documentElement.scrollTop || document.body.scrollTop;
-  if (currentScroll > 0) {
-    window.scrollTo(0, 0);
+  // 页面回到顶部（滚动效果）
+  let scrollTop =
+    window.pageYOffset ||
+    document.documentElement.scrollTop ||
+    document.body.scrollTop;
+  if (scrollTop > 0) {
+    const timeTop = setInterval(() => {
+      document.documentElement.scrollTop =
+        document.body.scrollTop =
+        scrollTop -=
+          50; //一次减50往上滑动
+      if (scrollTop <= 0) {
+        clearInterval(timeTop);
+      }
+    }, 10); //定时调用函数使其更顺滑
   }
 };
 
@@ -55,7 +66,7 @@ const contactUs = () => {
         margin-left: 5px;
       }
     }
- 
+
     & > span {
       &:first-of-type {
         display: inline-block;

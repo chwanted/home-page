@@ -1,6 +1,8 @@
 <template>
   <div class="NewsList">
-    <div class="banner" />
+    <div class="banner">
+      <!-- <div class="banner-title">新闻中心</div> -->
+    </div>
     <section class="news-list">
       <div
         class="news-list-item"
@@ -37,11 +39,19 @@ const toDetail = (id) => {
 <style lang="scss" scoped>
 .NewsList {
   .banner {
+    position: relative;
     width: 100vw;
     height: 500px;
     background: url("@/assets/images/news/news-center-bck.jpg") no-repeat;
     background-size: cover;
     background-position-y: 15%;
+
+    &-title {
+      position: absolute;
+      top: 50%;
+      right: 20%;
+      color: #fff;
+    }
   }
 
   .news-list {

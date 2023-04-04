@@ -118,7 +118,7 @@ import team1 from "@/assets/images/team/team1.jpg";
             padding: 3.85% 5%;
             position: relative;
             color: #464646;
-            cursor: default;
+            cursor: pointer;
             transform: perspective(1px) translateZ(0);
 
             &::before {
