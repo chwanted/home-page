@@ -1,19 +1,15 @@
 <template>
   <div id="footer" class="footer">
-    <div class="logo">
-      <img src="@/assets/img/logo_white.png" alt="logo图" />
-    </div>
-    <p class="title">{{ state.config.name }}</p>
-    <p class="address_tel_fax">
+    <p class="footer-box">
       <span>地址：{{ state.config.address }}</span>
       <span>Tel：{{ state.config.phone }}</span>
       <span>Fax：{{ state.config.tel }}</span>
     </p>
-    <p class="email_wx">
+    <p class="footer-box">
+      <span>邮编：{{ state.config.zip }}</span>
       <span>邮箱：{{ state.config.email }}</span>
-      <span>公司微信号：{{ state.config.wechat }}</span>
     </p>
-    <p class="copy">
+    <p class="footer-box">
       Copyright &copy; 2020 - 2023 {{ state.config.keepOnRecordIcp }}
       {{ state.config.name }}
     </p>
@@ -23,7 +19,17 @@
 <script setup>
 import { reactive } from "vue";
 const state = reactive({
-  config: {},
+  config: {
+    title: "袁仁山团队",
+    name: "袁仁山团队",
+    email: "XXXXXXXX@126.com",
+    phone: "18858748745",
+    tel: "021-5948544",
+    zip: "545001",
+    address: "重庆市江北区石马河街道",
+    /** 备案号 */
+    keepOnRecordIcp: "渝ICP备20041627号",
+  },
 });
 </script>
 
@@ -31,33 +37,25 @@ const state = reactive({
 .footer {
   width: 100%;
   height: 100%;
-  color: #fff;
   background: #474747;
   overflow: hidden;
   text-align: center;
-  .logo {
-    width: 95px;
-    height: 45px;
-    margin: 50px auto 20px;
-  }
-  .title {
-    font-size: 25px;
-    margin-bottom: 20px;
-  }
-  .address_tel_fax {
+  padding: 10px 0;
+
+  &-box {
     color: #d3d3d3;
     font-size: 14px;
-    margin: 10px 0;
+    margin-bottom: 10px;
+
+    & > span {
+      margin-left: 10px;
+    }
+
+    &:last-of-type {
+      margin-top: 50px;
+    }
   }
-  .email_wx {
-    color: #d3d3d3;
-    font-size: 14px;
-  }
-  .copy {
-    color: #d3d3d3;
-    font-size: 14px;
-    margin: 50px 0 10px;
-  }
+
   @media screen and (max-width: 997px) {
     .title {
       font-size: 20px;

@@ -29,6 +29,8 @@ export const newsList = [
     source: "建筑新网",
     date: "2023-03-23",
     title: "提振新消费 服务新格局 | 2023中国建博会（上海）开幕",
+    summary:
+      "3月22日，2023中国建博会（上海）在上海虹桥国家会展中心顺利开幕。本届展会由中国对外贸易中心旗下中国对外贸易广州展览有限公司以及红星美凯龙家居集团股份有限公司共同主办，旨在搭建世界级展会平台，服务家居行业高质量发展。展会展期为3天，从22日持续到24日。",
     content: `<p class="MsoNormal" style="text-indent:2em;">
     <span style="line-height:2;">3</span><span style="line-height:2;">月</span><span style="line-height:2;">22</span><span style="line-height:2;">日，</span><span style="line-height:2;">2023</span><span style="line-height:2;">中国建博会（上海）在上海虹桥国家会展中心顺利开幕。本届展会由中国对外贸易中心旗下中国对外贸易广州展览有限公司以及红星美凯龙家居集团股份有限公司共同主办，旨在搭建世界级展会平台，服务家居行业高质量发展。展会展期为</span><span style="line-height:2;">3</span><span style="line-height:2;">天，从</span><span style="line-height:2;">22</span><span style="line-height:2;">日持续到</span><span style="line-height:2;">24</span><span style="line-height:2;">日。</span> 
   </p>
@@ -81,6 +83,8 @@ export const newsList = [
     source: "国务院",
     date: "2023-02-08",
     title: "中共中央、国务院印发《质量强国建设纲要》",
+    summary:
+      "近日，中共中央、国务院印发《质量强国建设纲要》（以下简称《纲要》），并发出通知，要求各地区各部门结合实际认真贯彻落实。其中，提出了“提升建设工程品质，大力发展绿色建筑”的任务和要求。",
     content: `<p style="font-family:微软雅黑;font-size:16px;background-color:#FFFFFF;text-indent:2em;">
     <span style="font-size:14px;line-height:2;">近日，中共中央、国务院印发《质量强国建设纲要》（以下简称《纲要》），并发出通知，要求各地区各部门结合实际认真贯彻落实。其中，提出了“提升建设工程品质，大力发展绿色建筑”的任务和要求。</span> 
   </p>
@@ -109,6 +113,8 @@ export const newsList = [
     source: "国资委",
     date: "2023-01-18",
     title: "国资委召开中央建筑企业专项工作部署会",
+    summary:
+      "1月13日，国务院国资委在北京召开中央建筑企业专项工作部署会，国资委党委委员、副主任赵世堂出席会议并讲话。会上成立了中央建筑企业自律联盟，签署了自律公约。",
     content: `<p style="font-family:微软雅黑;font-size:16px;background-color:#FFFFFF;text-indent:2em;">
     <span style="line-height:2;font-size:14px;">1月13日，国务院国资委在北京召开中央建筑企业专项工作部署会，国资委党委委员、副主任赵世堂出席会议并讲话。会上成立了中央建筑企业自律联盟，签署了自律公约。</span> 
   </p>
@@ -122,6 +128,8 @@ export const newsList = [
     source: "建筑新网",
     date: "2023-01-18",
     title: "全国住房和城乡建设工作会议部署今年十二项重点工作",
+    summary:
+      "1月17日，全国住房和城乡建设工作会议在北京以视频形式召开。会议以习近平新时代中国特色社会主义思想为指导，全面学习贯彻党的二十大精神，认真落实中央经济工作会议精神，总结回顾2022年住房和城乡建设工作与新时代10年住房和城乡建设事业发展成就，分析新征程上面临的形势与任务，部署2023年重点工作。会议传达学习国务院领导同志重要批示。住房和城乡建设部党组书记、部长倪虹出席会议并讲话。",
     content: `<p style="font-family:微软雅黑;font-size:16px;background-color:#FFFFFF;text-indent:2em;">
     <span style="line-height:2;font-size:14px;">1月17日，全国住房和城乡建设工作会议在北京以视频形式召开。会议以习近平新时代中国特色社会主义思想为指导，全面学习贯彻党的二十大精神，认真落实中央经济工作会议精神，总结回顾2022年住房和城乡建设工作与新时代10年住房和城乡建设事业发展成就，分析新征程上面临的形势与任务，部署2023年重点工作。会议传达学习国务院领导同志重要批示。住房和城乡建设部党组书记、部长倪虹出席会议并讲话。</span> 
   </p>
@@ -186,6 +194,8 @@ export const newsList = [
     source: "我的钢铁网",
     date: "2023-01-09",
     title: "黄群慧：高度重视阻滞中国式现代化进程的三大风险",
+    summary:
+      "2022年12月28日至12月30日，2023中国钢铁市场展望暨“我的钢铁”年会在上海盛大召开。中国社会科学院经济研究所所长黄群慧先生发表了题为《厚植中国式现代化的实体经济根基》的主旨演讲。",
     content: `<p style="text-indent:1.4rem;text-align:justify;color:#333333;font-family:&quot;font-size:71.5307px;background-color:#FFFFFF;">
     <span style="line-height:2;">2022年12月28日至12月30日，2023中国钢铁市场展望暨“我的钢铁”年会在上海盛大召开。</span>
   </p>
@@ -214,6 +224,8 @@ export const newsList = [
     source: "建筑新网",
     date: "2022-11-29",
     title: "海汇繁花，珠贝生辉——中建八局装饰青岛上合之珠国际博览中心正式启用",
+    summary:
+      "青青之岛，熠熠上合。近日，由中建八局装饰公司参建的青岛·上合之珠国际博览中心正式启用。博览中心以“海汇繁花、珠贝生辉”的设计理念、开放包容的时代形象，搭建上合组织国家地方间开放合作新平台，迎接八方来客。",
     content: `<p style="text-indent:2em;">
     <span>青青之岛，熠熠上合。近日，由中建八局装饰公司参建的青岛·上合之珠国际博览中心正式启用。博览中心以“海汇繁花、珠贝生辉”的设计理念、开放包容的时代形象，搭建上合组织国家地方间开放合作新平台，迎接八方来客。</span> 
   </p>

@@ -14,6 +14,12 @@ const routes = [
     component: () => import("@/views/Business/index.vue"),
   },
   {
+    // 新闻中心
+    path: "/News",
+    name: "News",
+    component: () => import("@/views/News/List/index.vue"),
+  },
+  {
     // 新闻详情
     path: "/News-Detail",
     name: "NewsDetail",

@@ -55,6 +55,7 @@
           v-bind:class="['solution-container-item', `solution-item-${index}`]"
           v-for="(item, index) in solutionList"
           :key="index"
+          v-wave
         >
           <h4>{{ item.title }}</h4>
         </div>
@@ -95,7 +96,7 @@ const state = reactive({
   ],
 });
 const onSlideChange = (props) => {
-  state.bannerIndex = props.realIndex
+  state.bannerIndex = props.realIndex;
 };
 // const formatNumber = (num) => {
 //   // 格式化数据
@@ -251,19 +252,19 @@ const onSlideChange = (props) => {
         width: 373px;
         cursor: pointer;
 
-        &:hover {
-          position: relative;
-          &::before {
-            content: "";
-            position: absolute;
-            width: inherit;
-            height: inherit;
-            top: 0;
-            left: 0;
-            border-radius: 10px;
-            background: rgba(0, 0, 0, 0.4);
-          }
-        }
+        // &:hover {
+        //   position: relative;
+        //   &::before {
+        //     content: "";
+        //     position: absolute;
+        //     width: inherit;
+        //     height: inherit;
+        //     top: 0;
+        //     left: 0;
+        //     border-radius: 10px;
+        //     background: rgba(0, 0, 0, 0.4);
+        //   }
+        // }
 
         & > h4 {
           position: absolute;

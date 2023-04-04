@@ -25,6 +25,7 @@ const state = reactive({
 const navList = [
   { name: "首页", path: "/" },
   { name: "核心业务", path: "/Business" },
+  { name: "新闻资讯", path: "/News" },
   { name: "企业文化", path: "/Culture" },
   { name: "关于我们", path: "/AboutUs" },
 ];

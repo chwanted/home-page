@@ -52,6 +52,7 @@ const Modules = [Autoplay];
           width: 278px;
           height: 189px;
           object-fit: cover;
+          box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
         }
       }
 

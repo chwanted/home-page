@@ -4,5 +4,6 @@ import "./style.scss";
 import "./style.css";
 /* 路由 */
 import router from "./router";
+import VWave from "v-wave";
 
-createApp(App).use(router).mount("#app");
+createApp(App).use(router).use(VWave).mount("#app");

@@ -13,46 +13,18 @@
       <section class="Intro">
         <div class="Intro-container">
           <div class="Intro-container-left">
-            <div class="Intro-title">企业介绍</div>
-            <p>
-              我们的建筑团队是一家致力于提供高品质、可持续发展建筑解决方案的企业。我们的企业文化是建立在以下几个核心价值观基础上：
-            </p>
-            <p>
-              创新：我们不断追求创新，为客户提供最优质的解决方案，从而不断提升自身竞争力。
-            </p>
-            <p>
-              专业：我们拥有高素质的专业团队，致力于为客户提供最专业的建筑解决方案。
-            </p>
-            <p>
-              责任：我们承担企业社会责任，保证建筑质量和安全，并为员工和社会创造价值。
-            </p>
-            <p>
-              协作：我们倡导团队合作，鼓励员工彼此协作，以实现企业的共同目标。
-            </p>
-            <p>
-              诚信：我们坚守诚信原则，始终以公正、透明的态度处理企业和客户之间的关系。
-            </p>
-            <p>
-              在我们的企业文化中，我们强调员工和客户的体验。我们鼓励员工不断学习和进步，为客户提供高品质的服务。我们相信，通过实践这些价值观，我们能够不断提升企业的声誉和价值，为客户和社会创造更多的价值。
-            </p>
+            <img :src="team1" />
           </div>
           <div class="Intro-container-right">
-            <Swiper
-              :modules="[Autoplay, Pagination]"
-              :slidesPerView="1"
-              :loop="true"
-              :pagination="{ clickable: true }"
-              :autoplay="{
-                delay: 3000,
-                stopOnLastSlide: false,
-                disableOnInteraction: true,
-              }"
-              class="team-swiper swiper-no-swiping"
-            >
-              <SwiperSlide v-for="(item, index) in teamList" :key="index"
-                ><img :src="item" class="team-img" />
-              </SwiperSlide>
-            </Swiper>
+            <div class="Intro-container-right-item">
+              我们不断追求创新，为客户提供最优质的解决方案，从而不断提升自身竞争力。
+            </div>
+            <div class="Intro-container-right-item">
+              我们拥有高素质的专业团队，致力于为客户提供最专业的建筑解决方案。
+            </div>
+            <div class="Intro-container-right-item">
+              我们承担企业社会责任，保证建筑质量和安全，并为员工和社会创造价值。
+            </div>
           </div>
         </div>
       </section>
@@ -61,21 +33,15 @@
 </template>
 
 <script setup>
-import { Autoplay, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/vue";
 import team1 from "@/assets/images/team/team1.jpg";
-import team2 from "@/assets/images/team/team2.jpg";
-import team3 from "@/assets/images/team/team3.jpg";
-import "swiper/css/bundle";
-import "swiper/css";
-const teamList = [team1, team2, team3];
 </script>
 
 <style lang="scss" scoped>
 .culture {
   width: 100vw;
-  height: 100vh;
-  background: url("@/assets/images/Culture.jpg") #fff no-repeat top/cover;
+  background: url("@/assets/images/Culture.jpg") #fff no-repeat;
+  background-position-y: 10%;
+  background-size: cover;
   background-attachment: fixed;
 
   section {
@@ -102,7 +68,7 @@ const teamList = [team1, team2, team3];
   }
 
   main {
-    padding-top: 680px;
+    padding-top: 500px;
     background: transparent;
 
     .Spirit {
@@ -121,39 +87,61 @@ const teamList = [team1, team2, team3];
     }
 
     .Intro {
+      margin-bottom: 4.1vw;
       overflow: hidden;
 
       &-container {
-        margin: 1.12vw 0;
+        height: 300px;
         display: flex;
         align-items: center;
 
-        &-left,
-        &-right {
-          width: calc((100% - 30px) / 2);
-        }
-
         &-left {
           margin-right: 30px;
-          .Intro-title {
-            font-size: 20px;
-            text-align: start;
-            font-weight: bold;
-          }
-
-          p {
-            color: #333333;
-            text-align: left;
-            word-break: break-all;
-            font-size: 16px;
+          height: 300px;
+          & > img {
+            width: 500px;
+            height: inherit;
+            object-fit: cover;
           }
         }
 
         &-right {
-          .team-swiper {
-            .team-img {
-              height: 397px;
-              object-fit: cover;
+          height: 100%;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          &-item {
+            text-align: left;
+            background-color: #f5f5f5;
+            padding: 3.85% 5%;
+            position: relative;
+            color: #464646;
+            cursor: default;
+            transform: perspective(1px) translateZ(0);
+
+            &::before {
+              content: "";
+              position: absolute;
+              z-index: -1;
+              left: 0;
+              right: 100%;
+              bottom: 0;
+              background: #cc0000;
+              height: 4px;
+              -webkit-transition-property: right;
+              transition-property: right;
+              -webkit-transition-duration: 0.3s;
+              transition-duration: 0.3s;
+              -webkit-transition-timing-function: ease-out;
+              transition-timing-function: ease-out;
+            }
+
+            &:hover {
+              &::before {
+                right: 0;
+              }
             }
           }
         }
@@ -163,8 +151,4 @@ const teamList = [team1, team2, team3];
 }
 </style>
 
-<style lang="scss" scoped>
-:deep(.swiper-pagination-bullet-active) {
-  background: #fff !important;
-}
-</style>
+<style lang="scss" scoped></style>

@@ -53,12 +53,13 @@ import Certification from "@/components/Certification.vue";
 <style lang="scss" scoped>
 .aboutus {
   width: 100vw;
-  height: 100vh;
-  background: url("@/assets/images/aboutus.jpg") #fff no-repeat top/cover;
+  background: url("@/assets/images/aboutus.jpg") #fff no-repeat;
   background-attachment: fixed;
+  background-position-y: 15%;
+  background-size: cover;
 
   main {
-    padding-top: 680px;
+    padding-top: 500px;
     background: transparent;
 
     section {
@@ -103,7 +104,7 @@ import Certification from "@/components/Certification.vue";
     }
 
     .contact {
-      height: 1000px;
+      height: 1100px;
       margin-top: -16px;
       &-container {
         position: relative;
@@ -129,7 +130,7 @@ import Certification from "@/components/Certification.vue";
             border-radius: 8px;
             background: #fff;
             box-shadow: 0px 6px 10px 0px rgba(185, 185, 185, 0.5);
-            cursor: default;
+            cursor: pointer;
 
             .contact-title {
               font-size: 24px;
