@@ -16,13 +16,13 @@
             <img :src="team1" />
           </div>
           <div class="Intro-container-right">
-            <div class="Intro-container-right-item">
+            <div class="Intro-container-right-item" v-wave>
               我们不断追求创新，为客户提供最优质的解决方案，从而不断提升自身竞争力。
             </div>
-            <div class="Intro-container-right-item">
+            <div class="Intro-container-right-item" v-wave>
               我们拥有高素质的专业团队，致力于为客户提供最专业的建筑解决方案。
             </div>
-            <div class="Intro-container-right-item">
+            <div class="Intro-container-right-item" v-wave>
               我们承担企业社会责任，保证建筑质量和安全，并为员工和社会创造价值。
             </div>
           </div>

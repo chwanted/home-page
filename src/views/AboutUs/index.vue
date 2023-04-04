@@ -25,7 +25,7 @@
             <div class="contact-item">
               <div v-bind:class="['contact-location', 'contact-icon']" />
               <div class="contact-title">联系地址</div>
-              <div class="contact-value">重庆市江北区中华大道10号</div>
+              <div class="contact-value">重庆市江北区观音桥步行街10号天和里购物中心</div>
             </div>
             <div class="contact-item">
               <div v-bind:class="['contact-tel', 'contact-icon']" />
@@ -50,7 +50,7 @@
 
 <script setup>
 import Certification from "@/components/Certification.vue";
-import Map from "@/components/Map.vue";
+import Map from "./map.vue";
 </script>
 
 <style lang="scss" scoped>
@@ -107,7 +107,7 @@ import Map from "@/components/Map.vue";
     }
 
     .contact {
-      height: 1100px;
+      height: 800px;
       margin-top: -16px;
       &-container {
         position: relative;
@@ -187,7 +187,7 @@ import Map from "@/components/Map.vue";
           top: 280px;
           left: 0;
           width: 100%;
-          height: 700px;
+          height: 400px;
           z-index: 0;
         }
       }

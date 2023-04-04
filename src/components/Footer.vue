@@ -1,18 +1,24 @@
 <template>
   <div id="footer" class="footer">
-    <p class="footer-box">
-      <span>地址：{{ state.config.address }}</span>
-      <span>Tel：{{ state.config.phone }}</span>
-      <span>Fax：{{ state.config.tel }}</span>
-    </p>
-    <p class="footer-box">
-      <span>邮编：{{ state.config.zip }}</span>
-      <span>邮箱：{{ state.config.email }}</span>
-    </p>
-    <p class="footer-box">
-      Copyright &copy; 2020 - 2023 {{ state.config.keepOnRecordIcp }}
-      {{ state.config.name }}
-    </p>
+    <div class="footer-left">
+      <span>CONTACT US 联系我们</span>
+      <span>联系邮箱： {{ state.config.email }}</span>
+      <span>联系电话： {{ state.config.phone }}</span>
+      <span>联系地址： {{ state.config.address }}</span>
+    </div>
+    <div class="footer-right">
+      <span>友情链接</span>
+      <span class="link-container">
+        <a href="#">中国建筑网</a>
+        <a href="#">中国建筑协会</a>
+        <a href="#">建设工程网</a>
+        <a href="#">建新网</a>
+      </span>
+      <span class="footer-box">
+        Copyright &copy; 2020 - 2023 {{ state.config.keepOnRecordIcp }}
+        {{ state.config.name }}
+      </span>
+    </div>
   </div>
 </template>
 
@@ -36,40 +42,69 @@ const state = reactive({
 <style lang="scss" scoped>
 .footer {
   width: 100%;
-  height: 100%;
+  height: 248px;
   background: #474747;
-  overflow: hidden;
   text-align: center;
-  padding: 10px 0;
+  padding-top: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
 
-  &-box {
+  &-left {
+    margin-right: 150px;
+    & > span {
+      &:first-of-type {
+        flex: 1;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &-right {
+    & > span {
+      &:first-of-type {
+        margin-bottom: 20px;
+      }
+      a {
+        color: #d3d3d3;
+        margin-right: 30px;
+      }
+    }
+  }
+
+  &-left,
+  &-right {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
     color: #d3d3d3;
-    font-size: 14px;
-    margin-bottom: 10px;
 
     & > span {
-      margin-left: 10px;
-    }
+      display: inline-block;
+      font-size: 12px;
+      margin-top: 10px;
 
-    &:last-of-type {
-      margin-top: 50px;
+      &:first-of-type {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
     }
   }
 
-  @media screen and (max-width: 997px) {
-    .title {
-      font-size: 20px;
-    }
-    .address_tel_fax {
-      font-size: 12px;
-    }
-    .email_wx {
-      font-size: 12px;
-    }
-    .copy {
-      font-size: 12px;
-      margin: 30px 0 10px;
-    }
-  }
+  // @media screen and (max-width: 997px) {
+  //   .title {
+  //     font-size: 20px;
+  //   }
+  //   .address_tel_fax {
+  //     font-size: 12px;
+  //   }
+  //   .email_wx {
+  //     font-size: 12px;
+  //   }
+  //   .copy {
+  //     font-size: 12px;
+  //     margin: 30px 0 10px;
+  //   }
+  // }
 }
 </style>

@@ -31,8 +31,14 @@ onMounted(() => {
     "https://wprd04.is.autonavi.com/appmaptile?lang=zh_cn&size=1&style=7&x={x}&y={y}&z={z}"
   ).addTo(map);
 
+  // todo 可修改弹窗样式
   caseLocation.forEach((item) => {
-    L.marker(item.location).addTo(map).bindPopup(item.title).openPopup();
+    L.marker(item.location)
+      .addTo(map)
+      .bindPopup(item.title, {
+        closeButton: false,
+      })
+      .openPopup();
   });
 });
 </script>

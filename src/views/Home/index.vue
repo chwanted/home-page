@@ -55,7 +55,7 @@
           v-bind:class="['solution-container-item', `solution-item-${index}`]"
           v-for="(item, index) in solutionList"
           :key="index"
-          v-wave
+          @click="toPage()"
         >
           <h4>{{ item.title }}</h4>
         </div>
@@ -76,6 +76,7 @@
 
 <script setup>
 import { reactive } from "vue";
+import { useRouter } from "vue-router";
 import { Autoplay, Pagination } from "swiper";
 import { solutionList, bannerList, newsList } from "../../common/data";
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -85,6 +86,7 @@ import NewsList from "@/components/NewsList.vue";
 import "swiper/css/pagination";
 import "swiper/css";
 
+const router = useRouter();
 const bannerModules = [Autoplay, Pagination];
 const state = reactive({
   bannerIndex: 0,
@@ -98,10 +100,10 @@ const state = reactive({
 const onSlideChange = (props) => {
   state.bannerIndex = props.realIndex;
 };
-// const formatNumber = (num) => {
-//   // 格式化数据
-//   return num.replace(/\+/g, "");
-// };
+
+const toPage = () => {
+  router.push({ path: "/Business" });
+};
 </script>
 
 <style lang="scss" scoped>
