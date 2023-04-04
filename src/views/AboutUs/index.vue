@@ -39,7 +39,9 @@
             </div>
           </div>
 
-          <div class="contact-map" />
+          <div class="contact-map">
+            <Map />
+          </div>
         </div>
       </section>
     </main>
@@ -48,6 +50,7 @@
 
 <script setup>
 import Certification from "@/components/Certification.vue";
+import Map from "@/components/Map.vue";
 </script>
 
 <style lang="scss" scoped>
@@ -186,7 +189,6 @@ import Certification from "@/components/Certification.vue";
           width: 100%;
           height: 700px;
           z-index: 0;
-          background: url("@/assets/images/map.png") no-repeat center/cover;
         }
       }
     }
