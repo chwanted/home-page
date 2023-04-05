@@ -1,15 +1,29 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import postcssPxToViewport from "postcss-px-to-viewport";
+import viteCompression from "vite-plugin-compression";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  base: "./",
+  envDir: "env",
+  envPrefix: "VITE_", // .env文件中环境变量的前缀
+  plugins: [
+    vue(),
+    viteCompression({
+      verbose: false, // 不显示gzip压缩信息
+      threshold: 1024 * 10, // 10kb
+    }),
+  ],
   resolve: {
     extensions: [".js", ".vue"],
     alias: {
       "@": "/src",
     },
+  },
+  build: {
+    chunkSizeWarningLimit: 1500,
+    reportCompressedSize: false,
   },
   css: {
     postcss: {

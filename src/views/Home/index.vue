@@ -37,7 +37,7 @@
               <CountTo
                 :startVal="800"
                 :endVal="item.num"
-                duration="3000"
+                duration="3500"
               ></CountTo>
               <span v-if="item.more">+</span>
               <span>{{ item.unit }}</span>
