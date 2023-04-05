@@ -39,5 +39,8 @@ onMounted(() => {
 #map {
   width: 100%;
   height: 400px;
+  @media screen and (max-width: 768px) {
+    height: 800px;
+  }
 }
 </style>

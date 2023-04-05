@@ -46,6 +46,11 @@ const toDetail = (id) => {
     background-size: cover;
     background-position-y: 15%;
 
+    @media screen and (max-width: 768px) {
+      height: 1100px;
+      background-position-y: 5%;
+    }
+
     &-title {
       position: absolute;
       top: 50%;
@@ -56,6 +61,10 @@ const toDetail = (id) => {
 
   .news-list {
     padding: 4.1vw 300px;
+
+    @media screen and (max-width: 768px) {
+      padding: 4.1vw 100px;
+    }
 
     &-item {
       display: flex;
@@ -114,7 +123,14 @@ const toDetail = (id) => {
 
           &:first-of-type {
             flex: 1;
+            margin-right: 30px;
             color: #000;
+            word-break: break-all;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1; /* 这里是超出几行省略 */
+            overflow: hidden;
           }
 
           &:last-of-type {
@@ -139,9 +155,7 @@ const toDetail = (id) => {
         color: #999;
         display: inline-block;
         font-size: 12px;
-        height: 26px;
-        line-height: 26px;
-        padding: 0 8px;
+        padding: 4px 6px;
         word-break: keep-all;
       }
     }

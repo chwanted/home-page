@@ -41,11 +41,10 @@ const state = reactive({
 
 <style lang="scss" scoped>
 .footer {
-  width: 100%;
-  height: 248px;
+  width: 100vw;
   background: #474747;
   text-align: center;
-  padding-top: 3%;
+  padding: 3% 5%;
   display: flex;
   justify-content: center;
   align-items: start;
@@ -89,22 +88,7 @@ const state = reactive({
         font-family: Arial, Helvetica, sans-serif;
       }
     }
-  }
 
-  // @media screen and (max-width: 997px) {
-  //   .title {
-  //     font-size: 20px;
-  //   }
-  //   .address_tel_fax {
-  //     font-size: 12px;
-  //   }
-  //   .email_wx {
-  //     font-size: 12px;
-  //   }
-  //   .copy {
-  //     font-size: 12px;
-  //     margin: 30px 0 10px;
-  //   }
-  // }
+  }
 }
 </style>

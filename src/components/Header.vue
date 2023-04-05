@@ -11,16 +11,36 @@
         {{ item.name }}
       </li>
     </ul>
+    <img :src="menuIcon" class="header-menu-icon" @click="setVisbile()" />
+    <!-- <div class="menu-mask" v-show="state.menuVisible"> -->
+    <div
+      class="menu-mask"
+      :style="`height: ${state.menuVisible ? '100vh' : 0}`"
+      @click="setVisbile()"
+    >
+      <ul>
+        <li
+          v-for="(item, index) in navList"
+          :key="index"
+          :class="index == state.navIndex ? 'menu-mask-active' : ''"
+          @click.prevent="navClick(index, item.path)"
+        >
+          {{ item.name }}
+        </li>
+      </ul>
+    </div>
   </header>
 </template>
 
 <script setup>
 import { reactive } from "vue";
 import { useRouter } from "vue-router";
+import menuIcon from "@/assets/images/menu.png";
 
 const router = useRouter();
 const state = reactive({
   navIndex: 0,
+  menuVisible: false,
 });
 const navList = [
   { name: "首页", path: "/" },
@@ -34,6 +54,10 @@ const navClick = (index, path) => {
   state.navIndex = index;
   router.push({ path: path });
 };
+
+const setVisbile = () => {
+  state.menuVisible = !state.menuVisible;
+};
 </script>
 
 <style lang="scss" scoped>
@@ -45,7 +69,7 @@ const navClick = (index, path) => {
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 4.125vw;
+  height: 7.125%;
   z-index: 9999;
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(25px);
@@ -53,10 +77,10 @@ const navClick = (index, path) => {
   box-shadow: 0 14px 20px -12px rgba(0, 0, 0, 0.2);
 
   @media screen and (max-width: 768px) {
-    height: 190px;
+    height: 8%;
     .header-title {
       margin-left: 130px;
-      font-size: 100px;
+      font-size: 3vh;
     }
   }
 
@@ -71,6 +95,10 @@ const navClick = (index, path) => {
     display: flex;
     font-size: 16px;
     margin-right: 10px;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
 
     & > li {
       margin-right: 40px;
@@ -89,6 +117,49 @@ const navClick = (index, path) => {
 
     .menu-active {
       color: #c00;
+    }
+  }
+
+  &-menu-icon {
+    display: none;
+    width: 100px;
+    height: 100px;
+    margin-right: 100px;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  .menu-mask {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.75);
+    transition: all 0.3s;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+
+      li {
+        list-style: none;
+        overflow: hidden;
+        margin: 0 230px;
+        height: 250px;
+        line-height: 250px;
+        text-align: left;
+      }
+    }
+
+    &-active {
+      color: #cc0000;
     }
   }
 }

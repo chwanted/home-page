@@ -53,6 +53,11 @@ const Modules = [Autoplay];
           height: 189px;
           object-fit: cover;
           box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+
+          @media screen and (max-width: 768px) {
+            width: 478px;
+            height: 389px;
+          }
         }
       }
 
@@ -60,6 +65,11 @@ const Modules = [Autoplay];
         .certification-img {
           width: 300px;
           height: 227px;
+
+          @media screen and (max-width: 768px) {
+            width: 930px;
+            height: 527px;
+          }
         }
       }
     }

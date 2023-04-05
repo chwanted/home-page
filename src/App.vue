@@ -11,4 +11,6 @@ import GoTop from "./components/GoTop.vue";
 import Footer from "./components/Footer.vue";
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>

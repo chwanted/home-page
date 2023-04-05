@@ -25,7 +25,9 @@
             <div class="contact-item">
               <div v-bind:class="['contact-location', 'contact-icon']" />
               <div class="contact-title">联系地址</div>
-              <div class="contact-value">重庆市江北区观音桥步行街10号天和里购物中心</div>
+              <div class="contact-value">
+                重庆市江北区观音桥步行街10号天和里购物中心
+              </div>
             </div>
             <div class="contact-item">
               <div v-bind:class="['contact-tel', 'contact-icon']" />
@@ -60,14 +62,30 @@ import Map from "./map.vue";
   background-attachment: fixed;
   background-position-y: 15%;
   background-size: cover;
+  background-position: center;
 
   main {
     padding-top: 500px;
     background: transparent;
+    @media screen and (max-width: 768px) {
+      padding-top: 1100px;
+    }
 
     section {
       background: #fff;
       padding: 4.1vw 300px 0;
+
+      @media screen and (max-width: 768px) {
+        padding: 4.1vw 100px 0;
+        strong {
+          font-size: 84px !important;
+          &:after {
+            width: 101px !important;
+            height: 10px !important;
+            transform: translateX(-50%) !important;
+          }
+        }
+      }
       & > strong {
         background: #fff;
         position: relative;
@@ -96,11 +114,16 @@ import Map from "./map.vue";
           text-align: left;
           word-break: break-all;
           font-size: 16px;
+
+          @media screen and (max-width: 768px) {
+            font-size: 64px !important;
+          }
         }
       }
     }
 
     .Certification {
+      margin-top: -16px;
       &-container {
         margin-top: 3.12vw;
       }
@@ -109,6 +132,11 @@ import Map from "./map.vue";
     .contact {
       height: 800px;
       margin-top: -16px;
+
+      @media screen and (max-width: 768px) {
+        height: 1400px;
+      }
+
       &-container {
         position: relative;
 
@@ -134,6 +162,9 @@ import Map from "./map.vue";
             background: #fff;
             box-shadow: 0px 6px 10px 0px rgba(185, 185, 185, 0.5);
             cursor: pointer;
+            @media screen and (max-width: 768px) {
+              height: 350px;
+            }
 
             .contact-title {
               font-size: 24px;
@@ -147,6 +178,10 @@ import Map from "./map.vue";
               width: 50px;
               height: 50px;
               margin-bottom: 18px;
+              @media screen and (max-width: 768px) {
+                width: 80px;
+                height: 80px;
+              }
             }
 
             .contact-location {
@@ -177,6 +212,9 @@ import Map from "./map.vue";
               .contact-value {
                 margin-top: 18px;
                 display: block;
+                @media screen and (max-width: 768px) {
+                  font-size: 48px !important;
+                }
               }
             }
           }
@@ -189,6 +227,10 @@ import Map from "./map.vue";
           width: 100%;
           height: 400px;
           z-index: 0;
+          @media screen and (max-width: 768px) {
+            top: 380px;
+            height: 800px;
+          }
         }
       }
     }

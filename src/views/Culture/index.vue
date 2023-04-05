@@ -42,11 +42,16 @@ import team1 from "@/assets/images/team/team1.jpg";
   background: url("@/assets/images/Culture.jpg") #fff no-repeat;
   background-position-y: 10%;
   background-size: cover;
+  background-position: right;
   background-attachment: fixed;
 
   section {
     background: #fff;
     padding: 4.1vw 300px 0;
+
+    @media screen and (max-width: 768px) {
+      padding: 4.1vw 100px 0;
+    }
 
     & > strong {
       background: #fff;
@@ -68,6 +73,9 @@ import team1 from "@/assets/images/team/team1.jpg";
   }
 
   main {
+    @media screen and (max-width: 768px) {
+      padding-top: 1100px;
+    }
     padding-top: 500px;
     background: transparent;
 

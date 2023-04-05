@@ -49,6 +49,36 @@ const contactUs = () => {
   z-index: 999;
   cursor: pointer;
 
+  @media screen and (max-width: 768px) {
+    right: 3%;
+    bottom: 7%;
+    .GoTop-item {
+      &:first-of-type {
+        display: none;
+      }
+
+      &:last-of-type {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: rgba(102, 102, 102, 0.5);
+
+        & > span {
+          &:last-of-type {
+            display: none;
+          }
+        }
+
+        .goTop {
+          display: block;
+          width: 100px;
+          height: 100px;
+          margin: 25% auto;
+        }
+      }
+    }
+  }
+
   &-item {
     width: fit-content;
     padding: 10px;
