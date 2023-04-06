@@ -40,7 +40,6 @@ import team1 from "@/assets/images/team/team1.jpg";
 .culture {
   width: 100vw;
   background: url("@/assets/images/Culture.jpg") #fff no-repeat;
-  background-position-y: 10%;
   background-size: cover;
   background-position: right;
   background-attachment: fixed;
@@ -51,13 +50,21 @@ import team1 from "@/assets/images/team/team1.jpg";
 
     @media screen and (max-width: 768px) {
       padding: 4.1vw 100px 0;
+      strong {
+        font-size: 84px !important;
+        &:after {
+          width: 101px !important;
+          height: 10px !important;
+        }
+      }
     }
 
     & > strong {
       background: #fff;
       position: relative;
-      font-size: 38px;
+      font-size: 35px;
       line-height: 50px;
+      color: #333333;
 
       &:after {
         content: "";
@@ -66,8 +73,8 @@ import team1 from "@/assets/images/team/team1.jpg";
         width: 24px;
         position: absolute;
         left: 50%;
-        margin-left: -12px;
-        bottom: -1.56vw;
+        transform: translateX(-50%);
+        bottom: -1.56vh;
       }
     }
   }
@@ -83,13 +90,12 @@ import team1 from "@/assets/images/team/team1.jpg";
       overflow: hidden;
 
       &-container {
-        margin-top: 3.12vw;
+        margin-top: 5vh;
         p {
           color: #333333;
           text-indent: 2em;
           text-align: left;
           word-break: break-all;
-          font-size: 16px;
         }
       }
     }
@@ -102,6 +108,26 @@ import team1 from "@/assets/images/team/team1.jpg";
         height: 300px;
         display: flex;
         align-items: center;
+        @media screen and (max-width: 768px) {
+          height: unset;
+          flex-direction: column;
+
+          .Intro-container-left {
+            height: unset;
+            & > img {
+              width: 100%;
+              height: auto;
+              object-fit: contain;
+              margin-bottom: 30px;
+            }
+          }
+
+          .Intro-container-right {
+            &-item {
+              margin-bottom: 30px;
+            }
+          }
+        }
 
         &-left {
           margin-right: 30px;

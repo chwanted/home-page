@@ -20,6 +20,21 @@
       </div>
     </SwiperSlide>
   </Swiper>
+  <div class="news-mobile">
+    <div
+      class="news-mobile-item"
+      v-for="(item, index) in newsList"
+      :key="index"
+      @click="toDetail(item.id)"
+    >
+      <div class="news-content">
+        <div class="news-content-title">{{ item.title }}</div>
+        <div class="news-content-summary">{{ item.summary }}</div>
+        <div class="news-content-date">{{ item.date }} | {{ item.source }}</div>
+      </div>
+      <img :src="item.img" />
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -44,6 +59,9 @@ const toDetail = (id) => {
 
 <style lang="scss" scoped>
 .news-swiper {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
   &-item {
     width: 480px;
     display: flex;
@@ -110,6 +128,67 @@ const toDetail = (id) => {
         &:last-of-type {
           display: inline-block;
         }
+      }
+    }
+  }
+}
+
+.news-mobile {
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+    .news-mobile-item {
+      display: flex;
+      margin-top: 2vh;
+
+      &:first-of-type {
+        margin-top: 5vh;
+      }
+
+      .news-content {
+        flex: 1;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+        margin-right: 30px;
+
+        &-title {
+          width: 100%;
+          word-break: break-all;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1; /* 这里是超出几行省略 */
+          overflow: hidden;
+          font-size: 80px;
+          font-weight: 400;
+          color: #333;
+        }
+
+        &-summary {
+          word-break: break-all;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2; /* 这里是超出几行省略 */
+          overflow: hidden;
+          font-size: 54px !important;
+          color: #666;
+        }
+
+        &-date {
+          color: #999;
+          font-size: 54px !important;
+        }
+      }
+
+      & > img {
+        width: 40%;
+        height: 13vh;
+        object-fit: cover;
+        object-position: 19%;
       }
     }
   }

@@ -9,15 +9,15 @@
     <div class="footer-right">
       <span>友情链接</span>
       <span class="link-container">
-        <a href="#">中国建筑网</a>
-        <a href="#">中国建筑协会</a>
-        <a href="#">建设工程网</a>
-        <a href="#">建新网</a>
+        <a href="https://www.cscec.com/">中国建筑网</a>
+        <a href="http://www.zgjzy.org.cn/">中国建筑协会</a>
+        <a href="https://jzsc.mohurd.gov.cn/home">住房和城乡建设部</a>
+        <a href="https://www.jzsbs.com/">建筑新网</a>
       </span>
       <span class="footer-box">
         Copyright &copy; 2020 - 2023 {{ state.config.keepOnRecordIcp }}
-        {{ state.config.name }}
       </span>
+      <span>{{ state.config.name }}</span>
     </div>
   </div>
 </template>
@@ -41,17 +41,25 @@ const state = reactive({
 
 <style lang="scss" scoped>
 .footer {
-  width: 100vw;
   background: #474747;
   text-align: center;
   padding: 3% 5%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: start;
 
+  @media screen and (max-width: 768px) {
+    padding: 3% 5%;
+    .footer-left,
+    .footer-right {
+      & > span {
+        font-size: 52px !important;
+      }
+    }
+  }
+
   &-left {
-    margin-right: 150px;
-    & > span {
+    v & > span {
       &:first-of-type {
         flex: 1;
         margin-bottom: 20px;
@@ -66,7 +74,9 @@ const state = reactive({
       }
       a {
         color: #d3d3d3;
+        font-weight: normal;
         margin-right: 30px;
+        white-space: break-all;
       }
     }
   }
@@ -86,9 +96,9 @@ const state = reactive({
       &:first-of-type {
         font-size: 20px;
         font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
       }
     }
-
   }
 }
 </style>

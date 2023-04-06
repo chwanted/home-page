@@ -49,13 +49,13 @@ const Modules = [Autoplay];
         width: auto !important;
 
         .certification-img {
-          width: 278px;
+          width: 327.7px;
           height: 189px;
           object-fit: cover;
           box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
 
           @media screen and (max-width: 768px) {
-            width: 478px;
+            width: 761px;
             height: 389px;
           }
         }
@@ -63,11 +63,9 @@ const Modules = [Autoplay];
 
       .swiper-slide-active {
         .certification-img {
-          width: 300px;
           height: 227px;
 
           @media screen and (max-width: 768px) {
-            width: 930px;
             height: 527px;
           }
         }

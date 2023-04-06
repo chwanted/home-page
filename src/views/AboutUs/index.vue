@@ -82,15 +82,15 @@ import Map from "./map.vue";
           &:after {
             width: 101px !important;
             height: 10px !important;
-            transform: translateX(-50%) !important;
           }
         }
       }
       & > strong {
         background: #fff;
         position: relative;
-        font-size: 38px;
+        font-size: 35px;
         line-height: 50px;
+        color: #333333;
 
         &:after {
           content: "";
@@ -99,25 +99,20 @@ import Map from "./map.vue";
           width: 24px;
           position: absolute;
           left: 50%;
-          margin-left: -12px;
-          bottom: -1.56vw;
+          transform: translateX(-50%);
+          bottom: -1.56vh;
         }
       }
     }
     .Introduction {
       overflow: hidden;
       &-container {
-        margin-top: 3.12vw;
+        margin-top: 5vh;
         p {
           color: #333333;
           text-indent: 2em;
           text-align: left;
           word-break: break-all;
-          font-size: 16px;
-
-          @media screen and (max-width: 768px) {
-            font-size: 64px !important;
-          }
         }
       }
     }
@@ -125,7 +120,10 @@ import Map from "./map.vue";
     .Certification {
       margin-top: -16px;
       &-container {
-        margin-top: 3.12vw;
+        margin-top: 5vh;
+        @media screen and (max-width: 768px) {
+          margin-top: 4vh;
+        }
       }
     }
 
@@ -134,7 +132,7 @@ import Map from "./map.vue";
       margin-top: -16px;
 
       @media screen and (max-width: 768px) {
-        height: 1400px;
+        height: 1700px;
       }
 
       &-container {
@@ -142,7 +140,7 @@ import Map from "./map.vue";
 
         .contact-box {
           position: absolute;
-          top: 3.12vw;
+          top: 5vh;
           left: 0;
           width: 100%;
           display: flex;
@@ -160,6 +158,7 @@ import Map from "./map.vue";
             text-align: center;
             border-radius: 8px;
             background: #fff;
+            color: #333333;
             box-shadow: 0px 6px 10px 0px rgba(185, 185, 185, 0.5);
             cursor: pointer;
             @media screen and (max-width: 768px) {
@@ -168,6 +167,9 @@ import Map from "./map.vue";
 
             .contact-title {
               font-size: 24px;
+              @media screen and (max-width: 768px) {
+                font-size: 48px;
+              }
             }
 
             .contact-value {
@@ -228,7 +230,7 @@ import Map from "./map.vue";
           height: 400px;
           z-index: 0;
           @media screen and (max-width: 768px) {
-            top: 380px;
+            top: 630px;
             height: 800px;
           }
         }

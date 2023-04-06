@@ -15,6 +15,17 @@ export default defineConfig({
       threshold: 1024 * 10, // 10kb
     }),
   ],
+  // 开发配置
+  server: {
+    port: 8080,
+    open: true,
+    host: "0.0.0.0",
+  },
+  // 预览配置
+  preview: {
+    port: 8080,
+    open: true,
+  },
   resolve: {
     extensions: [".js", ".vue"],
     alias: {

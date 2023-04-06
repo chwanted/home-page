@@ -110,13 +110,14 @@ const toPage = () => {
 @import "@/assets/font/font.css";
 
 .main-body {
-  margin-top: -12px;
-
   &-top {
     display: flex;
     flex-direction: column;
     height: 102vh;
-    max-height: 1080px;
+    max-height: 1090px;
+    @media screen and (max-width: 768px) {
+      max-height: 1390px;
+    }
 
     &-swiper {
       position: relative;
@@ -135,6 +136,9 @@ const toPage = () => {
       max-height: 1080px;
       transform: scale(1.05);
       filter: blur(0.2vw);
+      @media screen and (max-width: 768px) {
+        max-height: 1280px;
+      }
     }
 
     .swiper-bck0 {
@@ -160,6 +164,10 @@ const toPage = () => {
       max-height: 705px;
       width: 100vw;
       z-index: 2;
+
+      @media screen and (max-width: 768px) {
+        max-height: 1050px;
+      }
 
       .swiper-wrapper {
         .swiper-slide {
@@ -208,6 +216,9 @@ const toPage = () => {
         list-style: none;
         font-size: 20px;
         color: #3d3d3d;
+        @media screen and (max-width: 768px) {
+          font-size: 34px !important;
+        }
 
         &-box {
           &-num {
@@ -217,11 +228,19 @@ const toPage = () => {
               font-weight: 500;
               color: #cc0000;
 
+              @media screen and (max-width: 768px) {
+                font-size: 64px !important;
+              }
+
               &:last-of-type {
                 margin-left: 5px;
                 font-size: 16px;
                 color: #3d3d3d;
                 text-shadow: none;
+
+                @media screen and (max-width: 768px) {
+                  font-size: 32px !important;
+                }
               }
             }
           }
@@ -233,7 +252,6 @@ const toPage = () => {
 
         .statistics-item {
           flex-basis: 50%;
-          column-gap: 60px;
         }
       }
     }
@@ -244,18 +262,29 @@ const toPage = () => {
     align-items: center;
 
     &-container {
-      margin-top: 3.12vw;
+      margin-top: 5vh;
       display: grid;
       grid-template-columns: repeat(3, 373px);
       grid-column-gap: 50px;
       grid-row-gap: 40px;
+
+      @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(3, 523px);
+        grid-row-gap: 50px;
+      }
 
       .solution-container-item {
         position: relative;
         border-radius: 10px;
         height: 269px;
         width: 373px;
+
         cursor: pointer;
+
+        @media screen and (max-width: 768px) {
+          height: 369px;
+          width: 523px;
+        }
 
         &:hover {
           position: relative;
@@ -279,6 +308,10 @@ const toPage = () => {
           font-weight: normal;
           color: #ffffff;
           line-height: 24px;
+
+          @media screen and (max-width: 768px) {
+            font-size: 48px !important ;
+          }
         }
       }
 
@@ -316,25 +349,39 @@ const toPage = () => {
 
   .news {
     &-container {
-      margin-top: 3.12vw;
+      margin-top: 5vh;
       margin-left: 110px;
+
+      @media screen and (max-width: 768px) {
+        margin: 0 100px;
+      }
     }
   }
 
   .culture {
     &-container {
-      margin-top: 3.12vw;
+      margin-top: 5vh;
     }
   }
 
   .Partner {
     &-container {
-      margin-top: 3.12vw;
+      margin-top: 5vh;
     }
   }
 
   section {
     padding: 4.98vw 0px 4.1vw;
+
+    @media screen and (max-width: 768px) {
+      strong {
+        font-size: 84px !important;
+        &:after {
+          width: 101px !important;
+          height: 10px !important;
+        }
+      }
+    }
 
     &:nth-of-type(even) {
       background: #f5f5f5;
@@ -342,8 +389,9 @@ const toPage = () => {
 
     & > strong {
       position: relative;
-      font-size: 38px;
+      font-size: 35px;
       line-height: 50px;
+      color: #333333;
 
       &:after {
         content: "";
@@ -352,8 +400,8 @@ const toPage = () => {
         width: 24px;
         position: absolute;
         left: 50%;
-        margin-left: -12px;
-        bottom: -1.56vw;
+        transform: translateX(-50%);
+        bottom: -1.56vh;
       }
     }
   }

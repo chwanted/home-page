@@ -1,7 +1,7 @@
 <template>
   <div class="GoTop">
     <div class="GoTop-item" @click="contactUs()">
-      <span class="contact" /><span>技术支持</span>
+      <span class="contact" /><span>联系我们</span>
     </div>
     <div class="GoTop-item" @click="GoTop()">
       <span class="goTop" /><span>回到顶部</span>

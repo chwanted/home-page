@@ -85,6 +85,8 @@ const toDetail = (id) => {
         margin-right: 30px;
 
         & > img {
+          width: 100%;
+          height: 100%;
           object-fit: cover;
           transition: all 0.36s ease;
         }
@@ -157,6 +159,14 @@ const toDetail = (id) => {
         font-size: 12px;
         padding: 4px 6px;
         word-break: keep-all;
+
+        @media screen and (max-width: 768px) {
+          font-size: 48px;
+          height: 74px;
+          padding: 10px;
+          line-height: 74px;
+          border-radius: 10px;
+        }
       }
     }
   }

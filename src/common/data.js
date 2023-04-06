@@ -1,6 +1,7 @@
 import banner1 from "@/assets/images/banner/banner1.jpg";
 import banner2 from "@/assets/images/banner/banner2.jpg";
 import banner3 from "@/assets/images/banner/banner3.jpg";
+import news0 from "@/assets/images/news/news0.jpg";
 import news1 from "@/assets/images/news/news1.png";
 import news2 from "@/assets/images/news/news2.png";
 import news3 from "@/assets/images/news/news3.png";
@@ -23,6 +24,30 @@ export const bannerList = [
 ];
 
 export const newsList = [
+  {
+    id: 0,
+    img: news0,
+    source: "工作动态",
+    date: "2023-01-05",
+    title: "袁仁山团队2022年终总结会圆满结束",
+    summary:
+      "在这一年的工作中，我们取得了许多进展，也遇到了许多挑战。回顾过去，我们认为团队中每个人的付出都是必不可少的，他们为我们的成功做出了巨大的贡献。在下一年的工作中，我们将继续努力，为客户提供高质量的服务，为团队的发展做出更大的贡献。",
+    content: `<p class="MsoNormal" style="text-indent: 2em">
+    在这一年的工作中，我们取得了许多进展，也遇到了许多挑战。回顾过去，我们认为团队中每个人的付出都是必不可少的，他们为我们的成功做出了巨大的贡献。在下一年的工作中，我们将继续努力，为客户提供高质量的服务，为团队的发展做出更大的贡献。
+  </p>
+  <p class="MsoNormal" style="text-indent: 2em">
+    回顾过去一年，我们团队的工作得到了很多客户的认可。我们的项目经理，工程师和技术人员不断创新，将创意和技术结合起来，为客户提供了独特的解决方案。他们的团队协作能力也不断得到加强，团队之间的协作更加顺畅，能够快速解决问题。同时，我们也注意到，每个人都在团队的工作中付出了很多，有些人甚至超出了工作职责范围，为项目的成功做出了重要贡献。
+  </p>
+  <p class="MsoNormal" style="text-indent: 2em">
+    对于下一年的工作，我们将继续关注客户的需求，提供更好的服务。我们也将继续加强团队之间的协作，提高工作效率。同时，我们还计划继续加强员工的培训，提高团队的技能水平。我们相信，这些努力将带来更大的成功。
+  </p>
+  <p class="MsoNormal" style="text-indent: 2em">
+    在团队的工作中，我们也强调“责任”和“付出”这两个词。团队中的每个人都应该对自己的工作负责，确保工作的质量和效率。同时，我们也鼓励每个人尽自己最大的努力来为团队的成功做出贡献。在我们的团队中，每个人都应该意识到自己的工作不仅仅是工作，更是为客户和团队做出贡献的机会。我们相信，只有这样，我们才能取得更大的成功。
+  </p>
+  <p class="MsoNormal" style="text-indent: 2em">
+    总的来说，我们非常感谢团队中每个人在过去一年中的努力和付出。我们相信，只有大家团结协作，才能取得更好的成果。在未来的工作中，我们将继续加强团队协作，努力提高团队的技能水平，为客户提供更好的服务。
+  </p>`,
+  },
   {
     id: 1,
     img: news1,

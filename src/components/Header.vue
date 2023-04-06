@@ -11,11 +11,11 @@
         {{ item.name }}
       </li>
     </ul>
-    <img :src="menuIcon" class="header-menu-icon" @click="setVisbile()" />
+    <div class="header-menu-icon" @click="setVisbile()" />
     <!-- <div class="menu-mask" v-show="state.menuVisible"> -->
     <div
       class="menu-mask"
-      :style="`height: ${state.menuVisible ? '100vh' : 0}`"
+      :style="{ height: state.menuVisible ? '100vh' : 0 }"
       @click="setVisbile()"
     >
       <ul>
@@ -35,7 +35,6 @@
 <script setup>
 import { reactive } from "vue";
 import { useRouter } from "vue-router";
-import menuIcon from "@/assets/images/menu.png";
 
 const router = useRouter();
 const state = reactive({
@@ -69,7 +68,7 @@ const setVisbile = () => {
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 7.125%;
+  height: 7vh;
   z-index: 9999;
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(25px);
@@ -77,10 +76,10 @@ const setVisbile = () => {
   box-shadow: 0 14px 20px -12px rgba(0, 0, 0, 0.2);
 
   @media screen and (max-width: 768px) {
-    height: 8%;
+    background-color: rgba(255, 255, 255);
     .header-title {
       margin-left: 130px;
-      font-size: 3vh;
+      font-size: 2.7vh;
     }
   }
 
@@ -125,6 +124,7 @@ const setVisbile = () => {
     width: 100px;
     height: 100px;
     margin-right: 100px;
+    background: url("@/assets/images/menu.png") no-repeat center/contain;
 
     @media screen and (max-width: 768px) {
       display: block;
@@ -133,11 +133,11 @@ const setVisbile = () => {
 
   .menu-mask {
     position: fixed;
-    top: 100%;
+    top: 7vh;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 1;
+    z-index: 99999;
     overflow: hidden;
     background-color: rgba(255, 255, 255, 0.75);
     transition: all 0.3s;

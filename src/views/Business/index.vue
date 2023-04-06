@@ -33,8 +33,11 @@ import Map from "@/components/Map.vue";
     height: 500px;
     background: url("@/assets/images/business.png") no-repeat;
     background-size: cover;
-    background-position-y: 15%;
     overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+      height: 1100px;
+    }
 
     &-rect {
       position: absolute;
@@ -44,6 +47,7 @@ import Map from "@/components/Map.vue";
       left: 50%;
       transform: translate(-50%, -50%);
       background: url("@/assets/images/rect.png") no-repeat;
+      background-size: contain;
     }
 
     &-title {
@@ -52,6 +56,10 @@ import Map from "@/components/Map.vue";
       left: 50%;
       transform: translateX(-50%);
       width: inherit;
+      @media screen and (max-width: 768px) {
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
 
       & > span {
         white-space: nowrap;
@@ -62,6 +70,9 @@ import Map from "@/components/Map.vue";
         &:last-of-type {
           color: rgb(210, 136, 136);
         }
+        @media screen and (max-width: 768px) {
+          font-size: 68px;
+        }
       }
 
       & > p {
@@ -71,6 +82,10 @@ import Map from "@/components/Map.vue";
         line-height: 1.5;
         font-size: 14px;
         color: #fff;
+
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
       }
     }
   }
@@ -78,11 +93,24 @@ import Map from "@/components/Map.vue";
   section {
     background: #fff;
     padding: 4.1vw 300px 0;
+
+    @media screen and (max-width: 768px) {
+      padding: 4.1vw 100px 0;
+      strong {
+        font-size: 84px !important;
+        &:after {
+          width: 101px !important;
+          height: 10px !important;
+        }
+      }
+    }
+
     & > strong {
       background: #fff;
       position: relative;
-      font-size: 38px;
+      font-size: 35px;
       line-height: 50px;
+      color: #333333;
 
       &:after {
         content: "";
@@ -91,8 +119,8 @@ import Map from "@/components/Map.vue";
         width: 24px;
         position: absolute;
         left: 50%;
-        margin-left: -12px;
-        bottom: -1.56vw;
+        transform: translateX(-50%);
+        bottom: -1.56vh;
       }
     }
   }
@@ -100,7 +128,7 @@ import Map from "@/components/Map.vue";
   .distribution {
     padding-bottom: 4.1vw;
     &-container {
-      margin-top: 3.12vw;
+      margin-top: 5vh;
     }
   }
 }

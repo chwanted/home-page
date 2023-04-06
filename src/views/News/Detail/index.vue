@@ -36,20 +36,37 @@ onMounted(() => {
     background: url("@/assets/images/news/news-center-bck.jpg") no-repeat;
     background-size: cover;
     background-position-y: 15%;
+
+    @media screen and (max-width: 768px) {
+      background-position-y: top;
+      height: 1100px;
+    }
   }
 
   &-wrap {
     padding: 4.1vw 300px;
     text-align: left;
 
+    @media screen and (max-width: 768px) {
+      padding: 4.1vw 100px;
+    }
+
     &-title {
       font-size: 22px;
       color: #333;
+
+      @media screen and (max-width: 768px) {
+        font-size: 84px;
+        font-weight: 500;
+      }
     }
 
     &-date {
       margin-top: 36px;
       color: #999;
+      @media screen and (max-width: 768px) {
+        font-size: 68px;
+      }
     }
 
     &-content {
@@ -61,17 +78,24 @@ onMounted(() => {
     }
 
     &-source {
-      border: 1px solid #c7c7c7;
-      border-radius: 3px;
       box-sizing: border-box;
       color: #6f6f6f;
+      border: 1px solid #e5e5e5;
+      border-radius: 5px;
+      color: #999;
       display: inline-block;
-      font-size: 14px;
-      height: 25px;
-      line-height: 23px;
-      margin-right: 15px;
-      padding: 0 10px;
+      font-size: 12px;
+      padding: 4px 6px;
+      word-break: keep-all;
       cursor: default;
+
+      @media screen and (max-width: 768px) {
+        font-size: 48px;
+        height: 84px;
+        padding: 10px;
+        line-height: 70px;
+        border-radius: 8px;
+      }
     }
   }
 }
