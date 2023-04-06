@@ -5,6 +5,11 @@
     :initialSlide="0"
     navigation
     class="news-swiper"
+    :autoplay="{
+      delay: 2000,
+      stopOnLastSlide: false,
+      disableOnInteraction: true,
+    }"
   >
     <SwiperSlide v-for="(item, index) in newsList" :key="index">
       <div class="news-swiper-item">

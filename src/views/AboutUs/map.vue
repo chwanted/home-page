@@ -6,6 +6,7 @@
 import { onMounted } from "vue";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import iconUrl from "@/assets/images/customLocation.png";
 const address = {
   location: [29.573694, 106.533893],
   road: "公司地址：重庆市江北区观音桥步行街10号天和里购物中心",
@@ -26,7 +27,12 @@ onMounted(() => {
   L.tileLayer(
     "https://wprd04.is.autonavi.com/appmaptile?lang=zh_cn&size=1&style=7&x={x}&y={y}&z={z}"
   ).addTo(map);
-  L.marker(address.location)
+  let customIcon = L.icon({
+    iconUrl,
+    iconSize: 40,
+    iconAnchor: 20,
+  });
+  L.marker(address.location, { icon: customIcon })
     .addTo(map)
     .bindPopup(`<div style="font-size:16px;">${address.road}</div>`, {
       closeButton: false,

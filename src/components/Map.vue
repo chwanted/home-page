@@ -6,6 +6,7 @@
 import { onMounted } from "vue";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import iconUrl from "@/assets/images/customLocation.png";
 
 // todo 可放项目图片
 const caseLocation = [
@@ -13,7 +14,7 @@ const caseLocation = [
   { title: "保定项目", location: [38.87, 115.4] },
   { title: "衡水项目", location: [37.76, 115.73] },
   { title: "淄博项目", location: [36.88, 118.09] },
-  { title: "重庆项目", location: [29.35, 106.33] },
+  { title: "重庆项目", location: [29.50, 106.44] },
 ];
 
 onMounted(() => {
@@ -30,10 +31,14 @@ onMounted(() => {
   L.tileLayer(
     "https://wprd04.is.autonavi.com/appmaptile?lang=zh_cn&size=1&style=7&x={x}&y={y}&z={z}"
   ).addTo(map);
-
+  let customIcon = L.icon({
+    iconUrl,
+    iconSize: 40,
+    iconAnchor: 20,
+  });
   // todo 可修改弹窗样式
   caseLocation.forEach((item) => {
-    L.marker(item.location)
+    L.marker(item.location, { icon: customIcon })
       .addTo(map)
       .bindPopup(item.title, {
         closeButton: false,

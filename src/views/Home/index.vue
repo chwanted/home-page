@@ -216,6 +216,7 @@ const toPage = () => {
         list-style: none;
         font-size: 20px;
         color: #3d3d3d;
+        cursor: default;
         @media screen and (max-width: 768px) {
           font-size: 34px !important;
         }
