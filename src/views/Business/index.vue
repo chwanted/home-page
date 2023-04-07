@@ -10,7 +10,9 @@
         </div>
       </div>
     </div>
-    <!-- <Case /> -->
+
+    <Case />
+
     <section class="distribution">
       <strong>项目分布</strong>
       <div class="distribution-container">

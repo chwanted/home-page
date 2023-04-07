@@ -14,7 +14,7 @@ const caseLocation = [
   { title: "保定项目", location: [38.87, 115.4] },
   { title: "衡水项目", location: [37.76, 115.73] },
   { title: "淄博项目", location: [36.88, 118.09] },
-  { title: "重庆项目", location: [29.50, 106.44] },
+  { title: "重庆项目", location: [29.5, 106.44] },
 ];
 
 onMounted(() => {
@@ -22,7 +22,7 @@ onMounted(() => {
     // 中心位置
     center: [29.35, 106.33],
     // 缩放等级
-    zoom: 5,
+    zoom: 4,
     // 版权控件
     attributionControl: false,
     // 缩放控件
@@ -52,5 +52,9 @@ onMounted(() => {
 #map {
   width: 100%;
   height: 700px;
+
+  @media screen and (max-width: 768px) {
+    height: 1100px;
+  }
 }
 </style>
