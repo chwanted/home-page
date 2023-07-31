@@ -106,7 +106,7 @@ const toDetail = (id) => {
         .news-header {
           & > span {
             &:first-of-type {
-              color: #c00;
+              color: rgb(5,39,175);
             }
           }
         }

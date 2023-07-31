@@ -1,12 +1,16 @@
 <template>
-  <header class="header">
-    <h4 class="header-title" @click="navClick(0, '/')">袁仁山团队</h4>
+  <header
+    id="navbar"
+    :class="['header', pageScrolled ? 'bg-white' : 'bg-transparent']"
+  >
+    <h4 class="header-title" @click.prevent="scrollTo('#navbar')">
+      袁仁山团队
+    </h4>
     <ul class="header-menu">
       <li
         v-for="(item, index) in navList"
         :key="index"
-        :class="index == state.navIndex ? 'menu-active' : ''"
-        @click="navClick(index, item.path)"
+        @click.prevent="navClick(index, item)"
       >
         {{ item.name }}
       </li>
@@ -23,9 +27,11 @@
           v-for="(item, index) in navList"
           :key="index"
           :class="index == state.navIndex ? 'menu-mask-active' : ''"
-          @click.prevent="navClick(index, item.path)"
+          @click="navClick(index, item.path)"
         >
-          {{ item.name }}
+          <a href="javascript:;" v-scroll-to="item.scrollTo"
+            >{{ item.name }}
+          </a>
         </li>
       </ul>
     </div>
@@ -33,33 +39,64 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
-import { useRouter } from "vue-router";
+import { reactive, ref, onMounted, onUnmounted } from "vue";
+import { scroller } from "vue-scrollto/src/scrollTo";
+const scrollTo = scroller();
+// import { useRouter } from "vue-router";
 
-const router = useRouter();
+// const router = useRouter();
 const state = reactive({
   navIndex: 0,
   menuVisible: false,
 });
+const pageScrolled = ref(false);
 const navList = [
-  { name: "首页", path: "/" },
-  { name: "核心业务", path: "/Business" },
-  { name: "新闻资讯", path: "/News" },
-  { name: "企业文化", path: "/Culture" },
-  { name: "关于我们", path: "/AboutUs" },
+  { name: "首页", path: "/", scrollTo: "#navbar" },
+  { name: "核心业务", path: "/Business", scrollTo: "#business" },
+  { name: "优秀案例", path: "/solution", scrollTo: "#solution" },
+  { name: "企业文化", path: "/Culture", scrollTo: "#culture" },
+  { name: "发展历程", path: "/AboutUs", scrollTo: "#aboutUs" },
+  { name: "合作伙伴", path: "/partner", scrollTo: "#partner" },
+  // { name: "新闻资讯", path: "/News", scrollTo: "#news" },
 ];
 
-const navClick = (index, path) => {
-  state.navIndex = index;
-  router.push({ path: path });
+const navClick = (index, item) => {
+  // state.navIndex = index;
+  scrollTo(item.scrollTo);
+  // router.push({ path: item.path });
 };
 
 const setVisbile = () => {
   state.menuVisible = !state.menuVisible;
 };
+
+const handleScroll = () => {
+  pageScrolled.value = window.scrollY > 0;
+};
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 </script>
 
 <style lang="scss" scoped>
+.bg-transparent {
+  background-color: transparent;
+  box-shadow: none;
+  color: white;
+}
+
+.bg-white {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(25px);
+  color: #333333;
+  box-shadow: 0 14px 20px -12px rgba(0, 0, 0, 0.2);
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -70,13 +107,9 @@ const setVisbile = () => {
   width: 100%;
   height: 7vh;
   z-index: 9999;
-  background-color: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(25px);
-  color: #333333;
-  box-shadow: 0 14px 20px -12px rgba(0, 0, 0, 0.2);
 
   @media screen and (max-width: 768px) {
-    background-color: rgba(255, 255, 255);
+    // background-color: rgba(255, 255, 255);
     .header-title {
       margin-left: 130px;
       font-size: 2.7vh;
@@ -94,6 +127,7 @@ const setVisbile = () => {
     display: flex;
     font-size: 16px;
     margin-right: 10px;
+    font-weight: 500;
 
     @media screen and (max-width: 768px) {
       display: none;
@@ -106,7 +140,7 @@ const setVisbile = () => {
       cursor: pointer;
 
       &:hover {
-        color: #c00;
+        color: rgb(5, 39, 175);
       }
 
       @media screen and (max-width: 768px) {
@@ -115,7 +149,7 @@ const setVisbile = () => {
     }
 
     .menu-active {
-      color: #c00;
+      color: rgb(5, 39, 175);
     }
   }
 
@@ -124,6 +158,7 @@ const setVisbile = () => {
     width: 100px;
     height: 100px;
     margin-right: 100px;
+    color: white;
     background: url("@/assets/images/menu.png") no-repeat center/contain;
 
     @media screen and (max-width: 768px) {
@@ -139,8 +174,9 @@ const setVisbile = () => {
     height: 100vh;
     z-index: 99999;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.9);
     transition: all 0.3s;
+    color: #333333;
 
     ul {
       margin: 0;
@@ -159,7 +195,7 @@ const setVisbile = () => {
     }
 
     &-active {
-      color: #cc0000;
+      color: rgb(5, 39, 175);
     }
   }
 }

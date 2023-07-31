@@ -13,17 +13,17 @@
       <section class="Intro">
         <div class="Intro-container">
           <div class="Intro-container-left">
-            <img :src="team1" />
+            <video :src="team1" />
           </div>
           <div class="Intro-container-right">
             <div class="Intro-container-right-item" v-wave>
-              我们不断追求创新，为客户提供最优质的解决方案，从而不断提升自身竞争力。
+              成功需要好的准备。
             </div>
             <div class="Intro-container-right-item" v-wave>
-              我们拥有高素质的专业团队，致力于为客户提供最专业的建筑解决方案。
+              成功是一种付出的象征。
             </div>
             <div class="Intro-container-right-item" v-wave>
-              我们承担企业社会责任，保证建筑质量和安全，并为员工和社会创造价值。
+              成功需要团队的共同努力。
             </div>
           </div>
         </div>
@@ -162,7 +162,7 @@ import team1 from "@/assets/images/team/team1.jpg";
               left: 0;
               right: 100%;
               bottom: 0;
-              background: #cc0000;
+              background: rgb(5, 39, 175);
               height: 4px;
               -webkit-transition-property: right;
               transition-property: right;

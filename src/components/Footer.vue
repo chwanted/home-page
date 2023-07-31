@@ -1,11 +1,11 @@
 <template>
   <div id="footer" class="footer">
-    <div class="footer-left">
+    <!-- <div class="footer-left">
       <span>CONTACT US 联系我们</span>
       <span>联系邮箱： {{ state.config.email }}</span>
       <span>联系电话： {{ state.config.phone }}</span>
       <span>联系地址： {{ state.config.address }}</span>
-    </div>
+    </div> -->
     <div class="footer-right">
       <span>友情链接</span>
       <span class="link-container">
@@ -15,9 +15,15 @@
         <a href="https://www.jzsbs.com/">建筑新网</a>
       </span>
       <span class="footer-box">
-        Copyright &copy; 2020 - 2023 {{ state.config.keepOnRecordIcp }}
+        Copyright &copy; 2022. <a href="yuanrenshan.com">yuanrenshan.com</a> All
+        rights reserved.
       </span>
-      <span>{{ state.config.name }}</span>
+      <span
+        >ICP备案/许可证号
+        <a href="https://beian.miit.gov.cn/" target="_blank"
+          >鄂ICP备2022003195号-1</a
+        ></span
+      >
     </div>
   </div>
 </template>

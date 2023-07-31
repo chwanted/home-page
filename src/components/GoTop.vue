@@ -1,8 +1,8 @@
 <template>
   <div class="GoTop">
-    <div class="GoTop-item" @click="contactUs()">
+    <!-- <div class="GoTop-item" @click="contactUs()">
       <span class="contact" /><span>联系我们</span>
-    </div>
+    </div> -->
     <div class="GoTop-item" @click="GoTop()">
       <span class="goTop" /><span>回到顶部</span>
     </div>
@@ -89,7 +89,7 @@ const contactUs = () => {
     font-size: 14px;
 
     &:hover {
-      background: #cc0000;
+      background: rgb(5,39,175);
 
       & > span:last-of-type {
         display: inline-block;

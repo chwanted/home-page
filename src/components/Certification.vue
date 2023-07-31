@@ -27,9 +27,9 @@ import "swiper/css";
 import "swiper/css/bundle";
 import certificate1 from "@/assets/images/certificate/certificate1.jpg";
 import certificate2 from "@/assets/images/certificate/certificate2.jpg";
-import certificate3 from "@/assets/images/certificate/certificate3.png";
+import certificate3 from "@/assets/images/certificate/certificate3.jpg";
 import certificate4 from "@/assets/images/certificate/certificate4.jpg";
-import certificate5 from "@/assets/images/certificate/certificate5.png";
+import certificate5 from "@/assets/images/certificate/certificate5.jpg";
 const certificationList = [
   certificate1,
   certificate2,

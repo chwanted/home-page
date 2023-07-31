@@ -43,7 +43,7 @@
 </template>
 
 <script setup>
-import { toRefs, defineProps } from "vue";
+import { toRefs } from "vue";
 import { Navigation, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { useRouter } from "vue-router";
@@ -99,7 +99,7 @@ const toDetail = (id) => {
     font-size: 24px;
     line-height: 36px;
     text-align: left;
-    border-bottom: 1px solid rgba(152, 25, 25, 0.2);
+    border-bottom: 1px solid rgb(5, 39, 175, 0.2);
     cursor: pointer;
   }
 
@@ -108,8 +108,8 @@ const toDetail = (id) => {
     line-height: 48px;
     height: 48px;
     width: 120px;
-    color: #981919;
-    border: 1px solid rgba(152, 25, 25);
+    color: rgb(5, 39, 175);
+    border: 1px solid rgb(5, 39, 175);
     font-size: 14px;
     display: inline-block;
     border-radius: 2.2em;
@@ -126,7 +126,7 @@ const toDetail = (id) => {
     &:hover {
       display: flex;
       justify-content: space-between;
-      background: #981919;
+      background: rgb(5, 39, 175);
       color: #fff;
 
       & > span {
@@ -209,7 +209,7 @@ const toDetail = (id) => {
 
   .swiper-button-prev,
   .swiper-button-next {
-    color: #981919;
+    color: rgb(5, 39, 175);
   }
 
   .swiper-button-next {
