@@ -1,10 +1,6 @@
 <template>
   <main class="main-body">
     <div class="main-body-top">
-      <!-- <div class="main-body-top-swiper">
-        <div
-          v-bind:class="['swiper-bck', `swiper-bck${state.bannerIndex}`]"
-        ></div> -->
       <Swiper
         :modules="bannerModules"
         :slidesPerView="1"
@@ -24,7 +20,6 @@
           <div class="banner-swiper-title">{{ item.title }}</div>
         </SwiperSlide>
       </Swiper>
-      <!-- </div> -->
 
       <ul class="statistics">
         <li
@@ -51,31 +46,8 @@
     <section class="business" id="business">
       <strong>核心业务</strong>
       <div class="business-container">
-        <div class="business-container-left" v-if="businessList.length">
-          <Swiper
-            :modules="[Autoplay]"
-            :loop="true"
-            :slides-per-view="6"
-            space-between="10"
-            direction="vertical"
-            :observer="true"
-            :observeParents="true"
-            :autoplay="{
-              delay: 3000,
-              stopOnLastSlide: false,
-              disableOnInteraction: true,
-            }"
-            class="business-swiper"
-          >
-            <SwiperSlide v-for="(item, index) in businessList" :key="index">
-              <div class="business-swiper-item">
-                <div class="business-swiper-item-k1">{{ item.k1 }}</div>
-                <div class="business-swiper-item-k2">{{ item.k2 }}</div>
-                <div class="business-swiper-item-k3">{{ item.k3 }}</div>
-                <div class="business-swiper-item-k4">{{ item.k4 }}</div>
-              </div>
-            </SwiperSlide>
-          </Swiper>
+        <div class="business-container-left">
+          <BusinessList />
         </div>
         <div class="business-container-right">
           <Map />
@@ -124,13 +96,13 @@
     <section class="aboutUs" id="aboutUs">
       <strong>发展历程</strong>
       <div class="aboutUs-container">
-        <Certification />
         <p>
           自2008年起，我们承包了大钢模工程，并在北京通州、大兴、秦皇岛、燕郊等多个地区承接人工项目。其中，我们还参与了北京通州《闽建集团》高档写字楼的建设，该写字楼高达5.45米层高。在应对多个班组轮换的情况下，我们积极参与并完成了该项目的一期、二期和三期工程。我们以专业的技术和全力以赴的工作态度，致力于为客户创造卓越的建筑工程成果。
         </p>
         <p>
           2014年，我们准确洞察建筑市场需求，成功转型并专注于定型化铝模板领域。在这一领域，我们取得了多项令人瞩目的代表性项目，彰显了我们在建筑行业的卓越实力。其中，广州《星汇湾》、武汉《龙湖滨江天街》《武汉中铁》等项目都是我们引以为豪的代表作品。同时，我们还在浙江的《海州上城》和《龙湖中德·舜山府》，以及新疆的《天山府》和河北的《尚府壹号》等地区展现了卓越的建筑技艺和优秀的项目管理能力。这些成功的项目不仅证明了我们对市场需求的准确洞察，更彰显了我们在定型化铝模板领域的卓越创新和不断超越的精神。
         </p>
+        <Certification />
         <p>
           在过去的2019年至2022年期间，我们荣幸地与众多知名地产企业合作，包括碧桂园、中建、北京城建、中德天城、金茂、万科、中海、金地、利祥地产等，彰显出我们在建筑行业的卓越表现。在这一时期，我们以卓越的劳务质量和员工表现，屡次荣获各大企业评选的殊荣，包括《优秀劳务》、《优秀员工》、《先进集体》、《安建双星》等荣誉。这些奖项是对我们专业团队不断努力和奉献的肯定，也展现了我们与众不同的优势。我们为这四年间每年在展开面积达到30万至100万平方的项目取得了卓越成绩感到自豪。尤其值得一提的是，在全球范围遭遇“白色口罩”的挑战下，我们始终坚持“负重前行”，为客户提供出色的单项木工劳务，创造了超过一亿人民币的巨大产值。这一连串的成功和荣誉，源自我们团结拼搏、追求卓越的团队精神，以及始终将客户满意放在首位的坚定承诺。我们将继续努力，不断创新，为更多客户提供卓越的服务和解决方案，开创更加辉煌的未来。
         </p>
@@ -153,12 +125,7 @@
 import { reactive } from "vue";
 import { useRouter } from "vue-router";
 import { Autoplay, Pagination } from "swiper";
-import {
-  solutionList,
-  bannerList,
-  newsList,
-  businessList,
-} from "../../common/data";
+import { solutionList, bannerList, newsList } from "../../common/data";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { CountTo } from "vue3-count-to";
 import Map from "@/components/Map.vue";
@@ -166,6 +133,7 @@ import media1 from "@/assets/images/media.mp4";
 import Partner from "@/components/Partner.vue";
 import NewsList from "@/components/NewsList.vue";
 import Certification from "@/components/Certification.vue";
+import BusinessList from "@/components/BusinessList.vue";
 import "swiper/css/pagination";
 import "swiper/css";
 
@@ -373,26 +341,26 @@ const toPage = () => {
           width: 523px;
         }
 
-        &:hover {
-          position: relative;
-          &::before {
-            content: "";
-            position: absolute;
-            width: inherit;
-            height: inherit;
-            top: 0;
-            left: 0;
-            border-radius: 10px;
-            background: rgba(0, 0, 0, 0.4);
-          }
-        }
+        // &:hover {
+        //   position: relative;
+        //   &::before {
+        //     content: "";
+        //     position: absolute;
+        //     width: inherit;
+        //     height: inherit;
+        //     top: 0;
+        //     left: 0;
+        //     border-radius: 10px;
+        //     background: rgba(0, 0, 0, 0.4);
+        //   }
+        // }
 
         & > h4 {
           position: absolute;
           bottom: 10px;
           left: 40px;
           font-size: 24px;
-          font-weight: normal;
+          font-weight: 400;
           color: #ffffff;
           line-height: 24px;
 
@@ -408,7 +376,7 @@ const toPage = () => {
       }
 
       .solution-item-1 {
-        background: url("@/assets/images/solution/solution1.png") no-repeat
+        background: url("@/assets/images/solution/solution1.jpg") no-repeat
           center/cover;
       }
 
@@ -418,17 +386,17 @@ const toPage = () => {
       }
 
       .solution-item-3 {
-        background: url("@/assets/images/solution/solution3.png") no-repeat
+        background: url("@/assets/images/solution/solution3.jpg") no-repeat
           center/cover;
       }
 
       .solution-item-4 {
-        background: url("@/assets/images/solution/solution4.png") no-repeat
+        background: url("@/assets/images/solution/solution4.jpg") no-repeat
           center/cover;
       }
 
       .solution-item-5 {
-        background: url("@/assets/images/solution/solution5.png") no-repeat
+        background: url("@/assets/images/solution/solution5.jpg") no-repeat
           center/cover;
       }
     }
@@ -453,14 +421,14 @@ const toPage = () => {
 
       @media screen and (max-width: 768px) {
         display: block;
+        padding: 0 9vw;
+        .business-container-left {
+          margin-bottom: 2vh;
+        }
       }
 
       &-left {
         flex: 1;
-        .business-swiper {
-          width: 100%;
-          height: 500px;
-        }
       }
       &-right {
         flex: 1;
@@ -483,9 +451,9 @@ const toPage = () => {
         .culture-container-left {
           height: 50vw;
           margin-right: 0px;
+          margin-bottom: 30px;
           &-item {
             width: 100%;
-            margin-bottom: 30px;
           }
         }
 
@@ -560,6 +528,9 @@ const toPage = () => {
     &-container {
       margin-top: 5vh;
       padding: 0 15.625vw;
+      .Certification-container {
+        margin-bottom: 3vh;
+      }
       @media screen and (max-width: 768px) {
         padding: 0 9vw;
       }
@@ -624,32 +595,6 @@ const toPage = () => {
     background: #fff !important;
     width: 20px !important;
     border-radius: 20px !important;
-  }
-}
-
-.business-swiper {
-  &-item {
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    height: 100%;
-    border-radius: 10px;
-    text-align: left;
-    font-size: 18px;
-    background-color: #4646460c;
-
-    &-k1 {
-      flex-basis: 29%;
-    }
-    &-k2 {
-      flex-basis: 15%;
-    }
-    &-k3 {
-      flex: 1;
-    }
-    &-k4 {
-      flex-basis: 10%;
-    }
   }
 }
 </style>

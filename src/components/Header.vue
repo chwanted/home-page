@@ -27,11 +27,9 @@
           v-for="(item, index) in navList"
           :key="index"
           :class="index == state.navIndex ? 'menu-mask-active' : ''"
-          @click="navClick(index, item.path)"
+          @click.prevent="navClick(index, item)"
         >
-          <a href="javascript:;" v-scroll-to="item.scrollTo"
-            >{{ item.name }}
-          </a>
+          {{ item.name }}
         </li>
       </ul>
     </div>

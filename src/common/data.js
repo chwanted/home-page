@@ -9,12 +9,12 @@ import defaultImg from "@/assets/images/news/default.jpg";
 import defaultImg2 from "@/assets/images/news/default2.jpg";
 
 export const solutionList = [
-  { title: "房建施工" },
-  { title: "市政路桥" },
-  { title: "勘察设计" },
-  { title: "机电安装" },
-  { title: "装饰装修" },
-  { title: "建材物流" },
+  { title: "星汇湾" },
+  { title: "龙湖·滨江天街" },
+  { title: "中德·舜山府" },
+  { title: "海州上城" },
+  { title: "天山府" },
+  { title: "尚府壹号" },
 ];
 
 export const bannerList = [

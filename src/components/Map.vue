@@ -46,8 +46,8 @@ onMounted(() => {
   ).addTo(map);
   let customIcon = L.icon({
     iconUrl,
-    iconSize: 20,
-    iconAnchor: 10,
+    iconSize: 25,
+    iconAnchor: 12.5,
   });
   caseLocation.forEach((item) => {
     L.marker(item.location, { icon: customIcon })
